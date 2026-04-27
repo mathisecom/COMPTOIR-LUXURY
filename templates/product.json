@@ -285,15 +285,15 @@
         "feature_JRi3my": {
           "type": "feature",
           "settings": {
-            "text": "Réduit la sensation de brûlure des yeux",
+            "text": "Livraison Offerte",
             "icon": "check"
           }
         },
         "feature_pMNn6R": {
           "type": "feature",
           "settings": {
-            "text": "Atténue les maux de tête liés aux écrans",
-            "icon": "check"
+            "text": "Retour sous 30 jours",
+            "icon": "arrow"
           }
         },
         "feature_wz8cJL": {
@@ -315,13 +315,13 @@
         "image_aspect": "3 / 4",
         "image_width": 50,
         "image_radius": 0,
-        "heading": "Focus & confort.",
-        "heading_font": "serif",
+        "heading": "Le Luxe à Porté de Main.",
+        "heading_font": "theme",
         "heading_size": 44,
         "heading_weight": "400",
-        "description": "<p>Conçues pour les heures passées sur écran, elles protègent vos yeux et favorisent une concentration durable.</p>",
+        "description": "",
         "text_size": 16,
-        "label": "Pourquoi les porter :",
+        "label": "Pourquoi nous choisir :",
         "label_size": 13,
         "icon_style": "filled",
         "icon_size": 24,
