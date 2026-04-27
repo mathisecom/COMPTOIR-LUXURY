@@ -265,6 +265,7 @@
     },
     "scrolling_text_3PYPAe": {
       "type": "scrolling-text",
+      "disabled": true,
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
