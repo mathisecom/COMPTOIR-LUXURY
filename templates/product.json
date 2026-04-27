@@ -15,7 +15,7 @@
         "liquid_Lmr4xQ": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .trust-badges {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 8px;\n    margin: 16px 0;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  }\n  .trust-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    background: #1a1a1a;\n    color: #ffffff;\n    padding: 8px 14px;\n    border-radius: 6px;\n    font-size: 10px;\n    font-weight: 500;\n    line-height: 1;\n    white-space: nowrap;\n  }\n  .trust-badge svg {\n    width: 16px;\n    height: 16px;\n    flex-shrink: 0;\n  }\n  @media (max-width: 480px) {\n    .trust-badge {\n      font-size: 12px;\n      padding: 7px 12px;\n    }\n  }\n</style>\n\n<div class=\"trust-badges\">\n  <span class=\"trust-badge\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <rect x=\"1\" y=\"6\" width=\"13\" height=\"11\" rx=\"1\"></rect>\n      <path d=\"M14 9h4l3 3v5h-7\"></path>\n      <circle cx=\"6\" cy=\"18\" r=\"2\"></circle>\n      <circle cx=\"17\" cy=\"18\" r=\"2\"></circle>\n    </svg>\n    Livraison offerte\n  </span>\n\n  <span class=\"trust-badge\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <rect x=\"4\" y=\"11\" width=\"16\" height=\"10\" rx=\"2\"></rect>\n      <path d=\"M8 11V7a4 4 0 0 1 8 0v4\"></path>\n    </svg>\n    Paiement sécurisé\n  </span>\n\n  <span class=\"trust-badge\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <path d=\"M12 2 4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z\"></path>\n    </svg>\n    Qualité 1:1\n  </span>\n</div>"
+            "liquid": "<style>\n  .trust-badges {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 8px;\n    margin: 16px 0;\n    width: 100%;\n  }\n  .trust-badge {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px;\n    background: #1a1a1a;\n    color: #ffffff;\n    padding: 9px 8px;\n    border-radius: 6px;\n    font-family: inherit;\n    font-size: 13px;\n    font-weight: 500;\n    line-height: 1.1;\n    white-space: nowrap;\n    box-sizing: border-box;\n    height: 36px;\n  }\n  .trust-badge__icon {\n    width: 16px;\n    height: 16px;\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n  .trust-badge__icon svg {\n    width: 100%;\n    height: 100%;\n    display: block;\n  }\n  @media (max-width: 600px) {\n    .trust-badges { gap: 5px; }\n    .trust-badge {\n      font-size: 11px;\n      padding: 7px 4px;\n      gap: 4px;\n      height: 32px;\n    }\n    .trust-badge__icon {\n      width: 13px;\n      height: 13px;\n    }\n  }\n  @media (max-width: 380px) {\n    .trust-badge {\n      font-size: 9px;\n      padding: 6px 3px;\n      gap: 3px;\n      height: 30px;\n    }\n    .trust-badge__icon {\n      width: 12px;\n      height: 12px;\n    }\n  }\n</style>\n\n<div class=\"trust-badges\">\n  <span class=\"trust-badge\">\n    <span class=\"trust-badge__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <path d=\"M3 6h11v11H3z\"/>\n        <path d=\"M14 9h4l3 3v5h-7\"/>\n        <circle cx=\"7\" cy=\"19\" r=\"2\"/>\n        <circle cx=\"17\" cy=\"19\" r=\"2\"/>\n      </svg>\n    </span>\n    Livraison offerte\n  </span>\n\n  <span class=\"trust-badge\">\n    <span class=\"trust-badge__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/>\n        <path d=\"M8 10V6a4 4 0 0 1 8 0v4\"/>\n      </svg>\n    </span>\n    Paiement sécurisé\n  </span>\n\n  <span class=\"trust-badge\">\n    <span class=\"trust-badge__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <path d=\"M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6l-8-3z\"/>\n      </svg>\n    </span>\n    Qualité 1:1\n  </span>\n</div>"
           }
         },
         "liquid_Ney4ep": {
@@ -204,12 +204,24 @@
             "title": "J’aime trop 😍",
             "content": "<p>Reçu aujourd’hui et j’aime trop 😍 ça taille bien et le rendu est propre</p>"
           }
+        },
+        "testimonial_jQBLHX": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
         }
       },
       "block_order": [
         "testimonial_8gL6Xy",
         "testimonial_azAykX",
-        "testimonial_yCizmh"
+        "testimonial_yCizmh",
+        "testimonial_jQBLHX"
       ],
       "name": "Testimonials",
       "settings": {
