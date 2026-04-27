@@ -50,6 +50,78 @@
         "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
       }
     },
+    "logoscroll_a34HcQ": {
+      "type": "logoscroll",
+      "blocks": {
+        "image_GTyY4Q": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        },
+        "image_Uj4QfE": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        },
+        "image_7AQ3Fn": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        },
+        "image_6eehpB": {
+          "type": "image",
+          "settings": {
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_GTyY4Q",
+        "image_Uj4QfE",
+        "image_7AQ3Fn",
+        "image_6eehpB"
+      ],
+      "name": "SS - Scrolling logo cloud #5",
+      "settings": {
+        "layout_radius": 30,
+        "layout_border_thickness": 0,
+        "heading": "<p>Inspiré Du Luxe</p>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 16,
+        "heading_size_mobile": 11,
+        "heading_height": 130,
+        "scrolling_velocity": 24,
+        "scrolling_velocity_mobile": 22,
+        "scrolling_direction": "left",
+        "pause_hover": false,
+        "scrolling_gap": 60,
+        "scrolling_gap_mobile": 24,
+        "card_width_desktop": 130,
+        "card_width_mobile": 100,
+        "heading_color": "#121212",
+        "layout_bg_color": "#FFFFFF",
+        "layout_border_color": "#121212",
+        "background_color": "#FFFFFF",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 0,
+        "full_width": false,
+        "content_width": 1400,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
     "rich_text_8PMmFb": {
       "type": "rich-text",
       "blocks": {
@@ -193,6 +265,7 @@
   },
   "order": [
     "slideshow",
+    "logoscroll_a34HcQ",
     "rich_text_8PMmFb",
     "featured_collection_DCz8XL",
     "rich_text_Mq86CA",
