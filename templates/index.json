@@ -273,17 +273,24 @@
     "rich_text_dVtdPc": {
       "type": "rich-text",
       "blocks": {
+        "subheading_xqbXgy": {
+          "type": "subheading",
+          "settings": {
+            "text": "ILS EN PARLENT MIEUX QUE NOUS"
+          }
+        },
         "heading_wB9LcY": {
           "type": "heading",
           "settings": {
             "text": "+3,000 CLIENTS SATISFAITS",
-            "heading_tag": "h2",
+            "heading_tag": "h3",
             "text_color": "",
             "gradient": ""
           }
         }
       },
       "block_order": [
+        "subheading_xqbXgy",
         "heading_wB9LcY"
       ],
       "name": "Rich text",
