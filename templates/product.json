@@ -78,6 +78,12 @@
             "liquid": "<style>\n  .stock-indicator {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    font-family: inherit;\n    font-size: 14px;\n    font-weight: 500;\n    color: #1a1a1a;\n    line-height: 1;\n  }\n  .stock-indicator__dot {\n    position: relative;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    background: #ff8c1a;\n    flex-shrink: 0;\n  }\n  .stock-indicator__dot::before {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    border-radius: 50%;\n    background: #ff8c1a;\n    opacity: 0.7;\n    animation: stock-pulse 1.6s ease-out infinite;\n  }\n  @keyframes stock-pulse {\n    0% {\n      transform: scale(1);\n      opacity: 0.7;\n    }\n    100% {\n      transform: scale(2.6);\n      opacity: 0;\n    }\n  }\n  @media (prefers-reduced-motion: reduce) {\n    .stock-indicator__dot::before {\n      animation: none;\n    }\n  }\n</style>\n\n<span class=\"stock-indicator\">\n  <span class=\"stock-indicator__dot\" aria-hidden=\"true\"></span>\n  Stock faible\n</span>"
           }
         },
+        "liquid_xBV7na": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .delivery-estimate {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    font-family: inherit;\n    font-size: 14px;\n    font-weight: 500;\n    color: #1A1A1A;\n    line-height: 1.2;\n  }\n  .delivery-estimate__icon {\n    width: 16px;\n    height: 16px;\n    flex-shrink: 0;\n  }\n  .delivery-estimate__icon svg {\n    width: 100%;\n    height: 100%;\n    display: block;\n  }\n</style>\n\n<span class=\"delivery-estimate\">\n  <span class=\"delivery-estimate__icon\" aria-hidden=\"true\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <path d=\"m7.5 4.27 9 5.15\"/>\n      <path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"/>\n      <polyline points=\"3.29 7 12 12 20.71 7\"/>\n      <line x1=\"12\" y1=\"22\" x2=\"12\" y2=\"12\"/>\n    </svg>\n  </span>\n  <span>Livraison estimée le <span class=\"delivery-estimate__date\"></span></span>\n</span>\n\n<script>\n  (function() {\n    // ===== RÉGLAGES =====\n    var DELIVERY_DAYS = 13; // Délai de livraison max (entre 7 et 13)\n    // ====================\n\n    var deliveryDate = new Date();\n    deliveryDate.setDate(deliveryDate.getDate() + DELIVERY_DAYS);\n\n    var formatted = deliveryDate.toLocaleDateString('fr-FR', {\n      day: '2-digit',\n      month: 'long',\n      year: 'numeric'\n    });\n\n    document.querySelectorAll('.delivery-estimate__date').forEach(function(el) {\n      el.textContent = formatted;\n    });\n  })();\n</script>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -121,6 +127,7 @@
         "variant_picker",
         "quantity_selector",
         "liquid_payQEK",
+        "liquid_xBV7na",
         "buy_buttons",
         "collapsible_text_8TjPNC",
         "collapsible_text_nrrxFg"
