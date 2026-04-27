@@ -103,9 +103,9 @@
         "card_width_desktop": 130,
         "card_width_mobile": 100,
         "heading_color": "#121212",
-        "layout_bg_color": "#FFFFFF",
+        "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "border_color": "#121212",
         "margin_top": 0,
         "margin_bottom": 0,
@@ -200,6 +200,22 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "scrolling_text_AFTtbd": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "small",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "text_gradient": ""
       }
     },
     "rich_text_wdjT9b": {
@@ -349,6 +365,7 @@
     "rich_text_8PMmFb",
     "featured_collection_DCz8XL",
     "rich_text_Mq86CA",
+    "scrolling_text_AFTtbd",
     "rich_text_wdjT9b",
     "featured_collection_jbiz3n",
     "rich_text_E8t83H",
