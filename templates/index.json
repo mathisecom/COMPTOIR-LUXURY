@@ -390,12 +390,27 @@
             "overlay_color": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_zitY4t": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_64KdyM",
         "collection_j7FDqU",
-        "collection_7i4TmC"
+        "collection_7i4TmC",
+        "collection_zitY4t"
       ],
       "name": "Collection list",
       "settings": {
@@ -403,7 +418,7 @@
         "stack_collections": false,
         "collections_per_row_mobile": "1",
         "collections_per_row": 3,
-        "show_progress_bar": false,
+        "show_progress_bar": true,
         "subheading": "",
         "title": "",
         "content": "",
