@@ -202,6 +202,86 @@
         "text_color": ""
       }
     },
+    "rich_text_wdjT9b": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4TyDyt": {
+          "type": "heading",
+          "settings": {
+            "text": "NOUVEAUTÉS",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_4TyDyt"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "featured_collection_jbiz3n": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "rich_text_E8t83H": {
+      "type": "rich-text",
+      "blocks": {
+        "button_UfUzdi": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "xl",
+            "text": "TOUT DÉCOUVRIR",
+            "url": "",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_UfUzdi"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -269,6 +349,9 @@
     "rich_text_8PMmFb",
     "featured_collection_DCz8XL",
     "rich_text_Mq86CA",
+    "rich_text_wdjT9b",
+    "featured_collection_jbiz3n",
+    "rich_text_E8t83H",
     "faq"
   ]
 }
