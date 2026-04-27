@@ -24,7 +24,7 @@
             "icon_background": "",
             "icon_color": "",
             "title": "Livraison Offerte",
-            "content": "<p>Tell your customers about your shipping offer.</p>"
+            "content": ""
           }
         },
         "customer-support": {
@@ -36,8 +36,8 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Customer service",
-            "content": "<p>Tell your customers how they can reach you.</p>"
+            "title": "Paiement Sécurisé",
+            "content": ""
           }
         },
         "discount": {
@@ -49,8 +49,8 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Refer a friend",
-            "content": "<p>Tell your customers about your promotional offers.</p>"
+            "title": "Service Client 24/7",
+            "content": ""
           }
         }
       },
