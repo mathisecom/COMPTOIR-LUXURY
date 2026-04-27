@@ -106,7 +106,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "Livraison & Retour",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -116,7 +116,7 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Title",
+            "title": "Les produits sont-ils authentiques ?",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
