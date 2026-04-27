@@ -210,10 +210,10 @@
           "settings": {
             "round_avatar": true,
             "show_rating": true,
-            "rating": 4,
-            "author": "",
-            "title": "Testimonial",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "rating": 5,
+            "author": "Olivia H.",
+            "title": "Je recommande !",
+            "content": "<p>Franchement pour le prix j’ai été choquée de la qualité, je recommande !</p>"
           }
         }
       },
