@@ -150,8 +150,8 @@
         "166442457738b23caf-2": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Puis-je modifier ou annuler ma commande apres l'avoir passée ?",
+            "content": "<p>Les modifications ou annulations sont possibles dans un délai limité après la passation de la commande. Veuillez nous contacter le plus rapidement possible pour toute modification.</p>"
           }
         }
       },
