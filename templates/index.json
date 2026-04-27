@@ -254,12 +254,34 @@
             "button_text": "",
             "button_link": ""
           }
+        },
+        "video_ihV7yc": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_zn9Uae": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
         "video_BnV9kK",
         "video_bj8bcx",
-        "video_f3feEB"
+        "video_f3feEB",
+        "video_ihV7yc",
+        "video_zn9Uae"
       ],
       "name": "Slider vidéo",
       "settings": {
@@ -272,14 +294,14 @@
         "slides_desktop": 4,
         "slides_tablet": 2,
         "slides_mobile": 1.8,
-        "gap_desktop": 16,
+        "gap_desktop": 22,
         "gap_mobile": 16,
         "loop_slider": true,
         "scroll_mode": "marquee",
         "marquee_direction": "right",
         "marquee_speed": 5,
         "autoplay_slider": true,
-        "autoplay_speed": 4,
+        "autoplay_speed": 2,
         "pause_on_hover": false,
         "show_arrows": false,
         "arrows_mobile": "none",
@@ -293,7 +315,7 @@
         "accent_color": "#111111",
         "button_bg": "#ffffff",
         "button_text_color": "#111111",
-        "max_width": 1280,
+        "max_width": 1440,
         "padding_top": 16,
         "padding_bottom": 0
       }
