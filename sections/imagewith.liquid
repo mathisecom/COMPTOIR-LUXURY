@@ -1,0 +1,707 @@
+{%- comment -%}
+  Section: Image avec texte et liste
+  Compatible: Tous thèmes Online Store 2.0 (Dawn, Sense, Studio, etc.)
+  Installation: déposer ce fichier dans /sections/ puis ajouter la section depuis l'éditeur de thème.
+{%- endcomment -%}
+
+<style>
+  #ImageWithText-{{ section.id }} {
+    --iwt-bg: {{ section.settings.bg_color }};
+    --iwt-heading-color: {{ section.settings.heading_color }};
+    --iwt-text-color: {{ section.settings.text_color }};
+    --iwt-label-color: {{ section.settings.label_color }};
+    --iwt-feature-text: {{ section.settings.feature_text_color }};
+    --iwt-icon-bg: {{ section.settings.icon_bg_color }};
+    --iwt-icon-color: {{ section.settings.icon_color }};
+    --iwt-btn-bg: {{ section.settings.button_bg }};
+    --iwt-btn-text: {{ section.settings.button_text_color }};
+    --iwt-btn-bg-hover: {{ section.settings.button_bg_hover }};
+    --iwt-radius: {{ section.settings.image_radius }}px;
+    --iwt-btn-radius: {{ section.settings.button_radius }}px;
+    background: var(--iwt-bg);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-grid {
+    display: grid;
+    grid-template-columns: {{ section.settings.image_width }}fr {{ 100 | minus: section.settings.image_width }}fr;
+    gap: {{ section.settings.column_gap }}px;
+    align-items: {{ section.settings.vertical_align }};
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-grid--right .iwt-image {
+    order: 2;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--iwt-radius);
+    {% if section.settings.image_aspect != 'natural' %}
+      aspect-ratio: {{ section.settings.image_aspect }};
+    {% endif %}
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-image .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-content {
+    text-align: {{ section.settings.text_align }};
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-heading {
+    font-family: {% if section.settings.heading_font == 'serif' %}Georgia, 'Times New Roman', serif{% elsif section.settings.heading_font == 'sans' %}-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif{% else %}inherit{% endif %};
+    font-size: clamp(28px, 4vw, {{ section.settings.heading_size }}px);
+    font-weight: {{ section.settings.heading_weight }};
+    line-height: 1.15;
+    color: var(--iwt-heading-color);
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-description {
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.6;
+    color: var(--iwt-text-color);
+    margin: 0 0 28px;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-description > *:last-child { margin-bottom: 0; }
+  #ImageWithText-{{ section.id }} .iwt-description a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-label {
+    font-size: {{ section.settings.label_size }}px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--iwt-label-color);
+    margin: 0 0 16px;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.feature_gap }}px;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--iwt-feature-text);
+    font-size: {{ section.settings.feature_size }}px;
+    line-height: 1.5;
+    {% if section.settings.text_align == 'center' %}justify-content: center;{% endif %}
+    {% if section.settings.text_align == 'right' %}justify-content: flex-end; flex-direction: row-reverse;{% endif %}
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-feature-icon {
+    flex-shrink: 0;
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    border-radius: 50%;
+    background: var(--iwt-icon-bg);
+    color: var(--iwt-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    {% if section.settings.icon_style == 'outline' %}
+      background: transparent;
+      border: 2px solid var(--iwt-icon-bg);
+      color: var(--iwt-icon-bg);
+    {% elsif section.settings.icon_style == 'none' %}
+      background: transparent;
+      color: var(--iwt-icon-bg);
+    {% endif %}
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-feature-icon svg {
+    width: 55%;
+    height: 55%;
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-button {
+    display: inline-block;
+    padding: 16px 32px;
+    background: var(--iwt-btn-bg);
+    color: var(--iwt-btn-text);
+    border-radius: var(--iwt-btn-radius);
+    text-decoration: none;
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: {% if section.settings.button_uppercase %}uppercase{% else %}none{% endif %};
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+    {% if section.settings.button_full_width %}width: 100%; text-align: center;{% endif %}
+  }
+
+  #ImageWithText-{{ section.id }} .iwt-button:hover {
+    background: var(--iwt-btn-bg-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Tablette */
+  @media (max-width: 989px) {
+    #ImageWithText-{{ section.id }} .iwt-grid {
+      gap: {{ section.settings.column_gap | divided_by: 2 }}px;
+    }
+    #ImageWithText-{{ section.id }} .iwt-heading {
+      margin-bottom: 16px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 749px) {
+    #ImageWithText-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+    }
+    #ImageWithText-{{ section.id }} .iwt-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    #ImageWithText-{{ section.id }} .iwt-grid--right .iwt-image {
+      order: {% if section.settings.mobile_image_position == 'bottom' %}2{% else %}0{% endif %};
+    }
+    #ImageWithText-{{ section.id }} .iwt-grid .iwt-image {
+      order: {% if section.settings.mobile_image_position == 'bottom' %}2{% else %}0{% endif %};
+    }
+    #ImageWithText-{{ section.id }} .iwt-content {
+      text-align: {{ section.settings.mobile_text_align }};
+    }
+    #ImageWithText-{{ section.id }} .iwt-heading {
+      font-size: clamp(24px, 7vw, 32px);
+    }
+    #ImageWithText-{{ section.id }} .iwt-button {
+      {% if section.settings.button_full_width_mobile %}width: 100%; text-align: center;{% endif %}
+    }
+    #ImageWithText-{{ section.id }} .iwt-feature {
+      {% if section.settings.mobile_text_align == 'left' %}justify-content: flex-start; flex-direction: row;{% endif %}
+    }
+  }
+</style>
+
+<section id="ImageWithText-{{ section.id }}" class="image-with-text-section">
+  <div class="iwt-container">
+    <div class="iwt-grid iwt-grid--{{ section.settings.image_position }}">
+
+      <div class="iwt-image">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1200 | image_tag:
+            loading: 'lazy',
+            sizes: '(max-width: 749px) 100vw, 50vw',
+            widths: '400, 600, 800, 1000, 1200, 1600',
+            alt: section.settings.image.alt | default: section.settings.heading
+          }}
+        {%- else -%}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <div class="iwt-content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="iwt-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="iwt-description rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.label != blank -%}
+          <p class="iwt-label">{{ section.settings.label | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="iwt-features">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'feature' -%}
+                  <li class="iwt-feature" {{ block.shopify_attributes }}>
+                    <span class="iwt-feature-icon" aria-hidden="true">
+                      {%- case block.settings.icon -%}
+                        {%- when 'check' -%}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        {%- when 'plus' -%}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        {%- when 'star' -%}
+                          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        {%- when 'arrow' -%}
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        {%- when 'dot' -%}
+                          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
+                        {%- when 'heart' -%}
+                          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                      {%- endcase -%}
+                    </span>
+                    <span class="iwt-feature-text">{{ block.settings.text | escape }}</span>
+                  </li>
+              {%- endcase -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link | default: '#' }}" class="iwt-button">{{ section.settings.button_text | escape }}</a>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image avec texte",
+  "tag": "section",
+  "class": "section-image-with-text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position de l'image (Desktop)",
+      "options": [
+        { "value": "left",  "label": "Gauche" },
+        { "value": "right", "label": "Droite" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect",
+      "label": "Format de l'image",
+      "options": [
+        { "value": "natural",  "label": "Naturel (selon l'image)" },
+        { "value": "1 / 1",    "label": "Carré (1:1)" },
+        { "value": "4 / 5",    "label": "Portrait (4:5)" },
+        { "value": "3 / 4",    "label": "Portrait haut (3:4)" },
+        { "value": "2 / 3",    "label": "Portrait magazine (2:3)" },
+        { "value": "16 / 9",   "label": "Paysage (16:9)" }
+      ],
+      "default": "3 / 4"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Largeur de l'image (Desktop %)",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "default": 50,
+      "info": "Pourcentage de la largeur totale occupée par l'image."
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Arrondi de l'image (px)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 0
+    },
+
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Focus & confort."
+    },
+    {
+      "type": "select",
+      "id": "heading_font",
+      "label": "Police du titre",
+      "options": [
+        { "value": "theme", "label": "Police du thème" },
+        { "value": "serif", "label": "Serif (Georgia)" },
+        { "value": "sans",  "label": "Sans-serif système" }
+      ],
+      "default": "serif"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Taille max du titre (px)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 44
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Graisse du titre",
+      "options": [
+        { "value": "300", "label": "Léger" },
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-gras" },
+        { "value": "700", "label": "Gras" }
+      ],
+      "default": "400"
+    },
+
+    {
+      "type": "header",
+      "content": "Description et label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Conçues pour les heures passées sur écran, elles protègent vos yeux et favorisent une concentration durable.</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Taille du texte (px)",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label (au-dessus de la liste)",
+      "default": "Pourquoi les porter :"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Taille du label (px)",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13
+    },
+
+    {
+      "type": "header",
+      "content": "Liste à puces"
+    },
+    {
+      "type": "select",
+      "id": "icon_style",
+      "label": "Style de l'icône",
+      "options": [
+        { "value": "filled",  "label": "Cercle plein" },
+        { "value": "outline", "label": "Cercle contour" },
+        { "value": "none",    "label": "Sans cercle" }
+      ],
+      "default": "filled"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Taille de l'icône (px)",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "feature_size",
+      "label": "Taille du texte de la liste (px)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "feature_gap",
+      "label": "Espacement entre les puces (px)",
+      "min": 4,
+      "max": 30,
+      "step": 2,
+      "default": 12
+    },
+
+    {
+      "type": "header",
+      "content": "Bouton"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Découvrez les lunettes Day"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Taille du texte du bouton (px)",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Arrondi du bouton (px)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "button_uppercase",
+      "label": "Texte du bouton en MAJUSCULES",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width",
+      "label": "Bouton pleine largeur (Desktop)",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width_mobile",
+      "label": "Bouton pleine largeur (Mobile)",
+      "default": false
+    },
+
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fond de la section",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Couleur du titre",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur de la description",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Couleur du label",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Couleur du texte de la liste",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Couleur de fond de l'icône",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Couleur de l'icône",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fond du bouton",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Texte du bouton",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_hover",
+      "label": "Fond du bouton (survol)",
+      "default": "#333333"
+    },
+
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "select",
+      "id": "vertical_align",
+      "label": "Alignement vertical du contenu",
+      "options": [
+        { "value": "start",  "label": "Haut" },
+        { "value": "center", "label": "Centre" },
+        { "value": "end",    "label": "Bas" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Alignement du texte (Desktop)",
+      "options": [
+        { "value": "left",   "label": "Gauche" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right",  "label": "Droite" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Alignement du texte (Mobile)",
+      "options": [
+        { "value": "left",   "label": "Gauche" },
+        { "value": "center", "label": "Centre" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Position de l'image (Mobile)",
+      "options": [
+        { "value": "top",    "label": "En haut" },
+        { "value": "bottom", "label": "En bas" }
+      ],
+      "default": "top"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Espacement entre image et texte (px)",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur maximale (px)",
+      "min": 800,
+      "max": 1600,
+      "step": 20,
+      "default": 1280
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge haut (px)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge bas (px)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Élément de liste",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Avantage ou caractéristique"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "check", "label": "Coche ✓" },
+            { "value": "plus",  "label": "Plus +" },
+            { "value": "star",  "label": "Étoile ★" },
+            { "value": "arrow", "label": "Flèche →" },
+            { "value": "dot",   "label": "Point •" },
+            { "value": "heart", "label": "Cœur ♥" }
+          ],
+          "default": "check"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Image avec texte",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": { "text": "Réduit la sensation de brûlure des yeux", "icon": "check" }
+        },
+        {
+          "type": "feature",
+          "settings": { "text": "Atténue les maux de tête liés aux écrans", "icon": "check" }
+        },
+        {
+          "type": "feature",
+          "settings": { "text": "Concentration prolongée, productivité assurée", "icon": "check" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
