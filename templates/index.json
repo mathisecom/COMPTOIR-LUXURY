@@ -303,14 +303,14 @@
         "feature_tB3nEt": {
           "type": "feature",
           "settings": {
-            "text": "Réduit la sensation de brûlure des yeux",
-            "icon": "check"
+            "text": "Retour sous 30 jours",
+            "icon": "arrow"
           }
         },
         "feature_DtXeWX": {
           "type": "feature",
           "settings": {
-            "text": "Atténue les maux de tête liés aux écrans",
+            "text": "Livraison Offerte",
             "icon": "check"
           }
         },
