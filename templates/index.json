@@ -50,6 +50,32 @@
         "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
       }
     },
+    "rich_text_8PMmFb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_T84WRm": {
+          "type": "heading",
+          "settings": {
+            "text": "MEILLEURES VENTES",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_T84WRm"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "featured_collection_DCz8XL": {
       "type": "featured-collection",
       "name": "Featured collection",
@@ -76,10 +102,10 @@
         "product_card_text_color": ""
       }
     },
-    "rich_text_8PMmFb": {
+    "rich_text_Mq86CA": {
       "type": "rich-text",
       "blocks": {
-        "button_JwDj6M": {
+        "button_axqW7Y": {
           "type": "button",
           "settings": {
             "style": "fill",
@@ -92,7 +118,7 @@
         }
       },
       "block_order": [
-        "button_JwDj6M"
+        "button_axqW7Y"
       ],
       "name": "Rich text",
       "settings": {
@@ -160,8 +186,9 @@
   },
   "order": [
     "slideshow",
-    "featured_collection_DCz8XL",
     "rich_text_8PMmFb",
+    "featured_collection_DCz8XL",
+    "rich_text_Mq86CA",
     "faq"
   ]
 }
