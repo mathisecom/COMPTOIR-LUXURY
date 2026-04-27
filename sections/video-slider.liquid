@@ -58,6 +58,12 @@
     transition: transform 0.3s ease;
   }
 
+  /* Mode défilement continu (marquee) */
+  #VideoSlider-{{ section.id }} .swiper.is-marquee .swiper-wrapper {
+    transition-timing-function: linear !important;
+    -webkit-transition-timing-function: linear !important;
+  }
+
   #VideoSlider-{{ section.id }} .vs-card {
     position: relative;
     width: 100%;
@@ -214,7 +220,7 @@
       </div>
     {%- endif -%}
 
-    <div class="swiper vs-swiper-{{ section.id }}">
+    <div class="swiper vs-swiper-{{ section.id }}{% if section.settings.scroll_mode == 'marquee' %} is-marquee{% endif %}">
       <div class="swiper-wrapper">
         {%- for block in section.blocks -%}
           <div class="swiper-slide" {{ block.shopify_attributes }}>
@@ -329,19 +335,11 @@
       var section = document.getElementById('VideoSlider-{{ section.id }}');
       if (!section) return;
 
-      var swiper = new Swiper('.vs-swiper-{{ section.id }}', {
+      var swiperConfig = {
         slidesPerView: {{ section.settings.slides_mobile }},
         spaceBetween: {{ section.settings.gap_mobile }},
         loop: {{ section.settings.loop_slider }},
-        speed: 600,
         grabCursor: true,
-        {% if section.settings.autoplay_slider %}
-        autoplay: {
-          delay: {{ section.settings.autoplay_speed | times: 1000 }},
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true
-        },
-        {% endif %}
         pagination: {
           el: '#VideoSlider-{{ section.id }} .swiper-pagination',
           clickable: true
@@ -360,7 +358,33 @@
             spaceBetween: {{ section.settings.gap_desktop }}
           }
         }
-      });
+      };
+
+      {% if section.settings.scroll_mode == 'marquee' %}
+        // Mode défilement continu fluide (marquee)
+        swiperConfig.loop = true;
+        swiperConfig.speed = {{ section.settings.marquee_speed | times: 1000 }};
+        swiperConfig.autoplay = {
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: {{ section.settings.pause_on_hover }},
+          reverseDirection: {% if section.settings.marquee_direction == 'right' %}true{% else %}false{% endif %}
+        };
+        swiperConfig.allowTouchMove = true;
+        swiperConfig.freeMode = false;
+      {% elsif section.settings.autoplay_slider %}
+        // Mode défilement par étapes
+        swiperConfig.speed = 600;
+        swiperConfig.autoplay = {
+          delay: {{ section.settings.autoplay_speed | times: 1000 }},
+          disableOnInteraction: false,
+          pauseOnMouseEnter: {{ section.settings.pause_on_hover }}
+        };
+      {% else %}
+        swiperConfig.speed = 600;
+      {% endif %}
+
+      var swiper = new Swiper('.vs-swiper-{{ section.id }}', swiperConfig);
 
       // Toggle son
       section.querySelectorAll('.vs-mute-btn').forEach(function(btn) {
@@ -525,19 +549,57 @@
       "default": true
     },
     {
+      "type": "select",
+      "id": "scroll_mode",
+      "label": "Mode de défilement",
+      "options": [
+        { "value": "step",    "label": "Par étapes (slide par slide)" },
+        { "value": "marquee", "label": "Continu fluide (marquee)" }
+      ],
+      "default": "step",
+      "info": "Le mode 'continu fluide' fait défiler les vidéos sans s'arrêter, comme un ruban."
+    },
+    {
+      "type": "select",
+      "id": "marquee_direction",
+      "label": "Direction du défilement continu",
+      "options": [
+        { "value": "left",  "label": "Vers la gauche" },
+        { "value": "right", "label": "Vers la droite" }
+      ],
+      "default": "left",
+      "info": "Uniquement pour le mode 'continu fluide'."
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "label": "Durée d'un cycle complet (secondes)",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "default": 20,
+      "info": "Plus la valeur est élevée, plus le défilement est lent. Pour le mode 'continu fluide'."
+    },
+    {
       "type": "checkbox",
       "id": "autoplay_slider",
-      "label": "Défilement automatique",
+      "label": "Défilement automatique (mode étapes)",
       "default": false
     },
     {
       "type": "range",
       "id": "autoplay_speed",
-      "label": "Vitesse autoplay (secondes)",
+      "label": "Délai entre chaque slide (secondes)",
       "min": 2,
       "max": 10,
       "step": 1,
       "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Mettre en pause au survol (desktop)",
+      "default": true
     },
     {
       "type": "checkbox",
