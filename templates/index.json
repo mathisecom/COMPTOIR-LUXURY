@@ -270,6 +270,34 @@
         "product_card_text_color": ""
       }
     },
+    "rich_text_E8t83H": {
+      "type": "rich-text",
+      "blocks": {
+        "button_UfUzdi": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "xl",
+            "text": "TOUT DÉCOUVRIR",
+            "url": "",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_UfUzdi"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "rich_text_dVtdPc": {
       "type": "rich-text",
       "blocks": {
@@ -363,34 +391,6 @@
         "testimonial_card_text_color": ""
       }
     },
-    "rich_text_E8t83H": {
-      "type": "rich-text",
-      "blocks": {
-        "button_UfUzdi": {
-          "type": "button",
-          "settings": {
-            "style": "fill",
-            "size": "xl",
-            "text": "TOUT DÉCOUVRIR",
-            "url": "",
-            "background": "",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "button_UfUzdi"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -461,9 +461,9 @@
     "scrolling_text_AFTtbd",
     "rich_text_wdjT9b",
     "featured_collection_jbiz3n",
+    "rich_text_E8t83H",
     "rich_text_dVtdPc",
     "testimonials_tEAPQT",
-    "rich_text_E8t83H",
     "faq"
   ]
 }
