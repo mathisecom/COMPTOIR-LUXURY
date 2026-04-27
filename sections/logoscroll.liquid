@@ -1,0 +1,727 @@
+{% comment %}
+---------------------------------------------------------
+Copyright Â© 2025 Section Store. All rights reserved.
+Unauthorized copying, modification, distribution, or use
+of this code or any portion of it, is strictly prohibited.
+Violators will be prosecuted to the fullest extent of the law.
+For inquiries or permissions, contact daniel@section.store
+---------------------------------------------------------
+{% endcomment %}
+
+{%- liquid 
+  assign padding_horizontal = section.settings.padding_horizontal
+  assign padding_horizontal_mobile = section.settings.padding_horizontal_mobile
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign border_color = section.settings.border_color
+  assign border_thickness = section.settings.border_thickness
+  assign margin_top = section.settings.margin_top
+  assign margin_bottom = section.settings.margin_bottom
+  assign margin_horizontal_mobile = section.settings.margin_horizontal_mobile
+  assign margin_horizontal = section.settings.margin_horizontal
+  assign background_color = section.settings.background_color
+  assign full_width = section.settings.full_width
+  assign content_width = section.settings.content_width
+  assign lazy = section.settings.lazy
+  assign section_radius = section.settings.section_radius
+
+  assign layout_border_thickness = section.settings.layout_border_thickness
+  assign layout_border_color = section.settings.layout_border_color
+  assign layout_radius = section.settings.layout_radius
+  assign layout_bg_color = section.settings.layout_bg_color
+
+  assign heading = section.settings.heading
+  assign heading_custom = section.settings.heading_custom
+  assign heading_font = section.settings.heading_font
+  assign heading_size = section.settings.heading_size
+  assign heading_size_mobile = section.settings.heading_size_mobile
+  assign heading_height = section.settings.heading_height
+  assign heading_color = section.settings.heading_color 
+
+  assign scrolling_velocity = section.settings.scrolling_velocity
+  assign scrolling_velocity_mobile = section.settings.scrolling_velocity_mobile
+  assign scrolling_direction = section.settings.scrolling_direction
+  assign scrolling_gap_mobile = section.settings.scrolling_gap_mobile
+  assign scrolling_gap = section.settings.scrolling_gap
+  assign pause_hover = section.settings.pause_hover
+
+  assign card_width_desktop = section.settings.card_width_desktop
+  assign card_width_mobile = section.settings.card_width_mobile
+-%}
+
+{%- style -%}
+  {{  heading_font | font_face: font_display: 'swap' }}
+
+  .section-{{ section.id }} {
+    border-top: solid {{ border_color }} {{ border_thickness }}px;
+    border-bottom: solid {{ border_color }} {{ border_thickness }}px;
+    margin-top: {{ margin_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ margin_bottom | times: 0.75 | round: 0 }}px;
+    margin-left: {{ margin_horizontal_mobile }}rem;
+    margin-right: {{ margin_horizontal_mobile }}rem;
+    border-radius: {{ section_radius | times: 0.6 | round: 0 }}px;
+    overflow: hidden;
+  }
+  
+  .section-{{ section.id }}-settings {
+    margin: 0 auto;
+    padding-top: {{ padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-left: {{ padding_horizontal_mobile }}rem;
+    padding-right: {{ padding_horizontal_mobile }}rem;
+  }
+
+  .scrolling-logo-body-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    background-color: {{ layout_bg_color }};
+    border: {{ layout_border_thickness }}px solid {{ layout_border_color }};
+    border-radius: {{ layout_radius }}px;
+    padding: 20px;
+    overflow: hidden;
+  }
+
+  .scrolling-logo-heading-{{ section.id }} {  
+    flex-shrink: 0;
+    width: 100px;
+  }
+
+  .scrolling-logo-heading-{{ section.id }} * {
+    margin: 0px;
+    font-size: {{ heading_size_mobile }}px;
+    color: {{ heading_color }};
+    line-height: {{ heading_height }}%;
+    text-transform: unset;
+    word-wrap: break-word;
+    font-weight: 700;
+  }
+
+  .scrolling-logo-slider-{{ section.id }} {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scrolling-logo-slider-{{ section.id }}::before,
+  .scrolling-logo-slider-{{ section.id }}::after {
+    content: "";
+    position: absolute;
+    width: 17%;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .scrolling-logo-slider-{{ section.id }}::before {
+    background: linear-gradient(90deg, {{ layout_bg_color }} 5%, rgba(0,0,0,0));
+    left: 0;
+  }
+  
+  .scrolling-logo-slider-{{ section.id }}::after {
+    background: linear-gradient(270deg, {{ layout_bg_color }} 5%, rgba(0,0,0,0));
+    right: 0;
+  }
+
+  .scrolling-logo-slide-{{ section.id }} {
+    width: 100%;
+    flex: 0 0 {{ card_width_mobile }}px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .scrolling-logo-slide-{{ section.id }}.card-shadow {
+    box-shadow: 0 .8rem 4rem rgba(0,0,0,.08)
+  }
+  
+  .scrolling-logo-slide-{{ section.id }} img,
+  .scrolling-logo-slide-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .scrolling-logo-slide-{{ section.id }} > svg {
+    background-color: #a0a0a0;
+  }
+
+  .scrolling-logo-list-{{ section.id }} {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    /* overflow: hidden; */
+    width: 100%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+  html[dir="rtl"] .scrolling-logo-list-{{ section.id }} {
+    flex-direction: row-reverse;
+  }
+
+  .scrolling-logo-item-{{ section.id }} {
+    padding-left: {{ scrolling_gap_mobile }}px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-shrink: 0;
+    width: calc(({{ card_width_mobile }}px * {{ section.blocks.size }}) + ({{ scrolling_gap_mobile }}px * {{ section.blocks.size }}));
+    gap: {{ scrolling_gap_mobile }}px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: stretch;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee-horizontal-{{ scrolling_direction }} {{ scrolling_velocity_mobile }}s linear infinite;
+  }
+
+  @keyframes marquee-horizontal-left {
+    0% {
+        transform: translateZ(0);
+        visibility: visible;
+    }
+    
+    100% {
+        transform: translate3d(-100%,0,0);
+    }
+  }
+
+  @keyframes marquee-horizontal-right {
+    0% {
+        transform: translate3d(-100%,0,0);
+        visibility: visible;
+    }
+    
+    100% {
+        transform: translateZ(0);
+    }
+  }
+  
+  @media(min-width: 1024px) {
+
+    .section-{{ section.id }} {
+      margin-top: {{ margin_top }}px;
+      margin-bottom: {{ margin_bottom }}px;
+      margin-left: {{ margin_horizontal }}rem;
+      margin-right: {{ margin_horizontal }}rem;
+      border-radius: {{ section_radius }}px;
+    }
+    
+    .section-{{ section.id }}-settings {
+      padding: 0 5rem;
+      padding-top: {{ padding_top }}px;
+      padding-bottom: {{ padding_bottom }}px;
+      padding-left: {{ padding_horizontal }}rem;
+      padding-right: {{ padding_horizontal }}rem;
+    }
+
+    .scrolling-logo-heading-{{ section.id }} * {     
+      font-size: {{ heading_size }}px;   
+    }
+
+    .scrolling-logo-slide-{{ section.id }} {
+      flex: 0 0 {{ card_width_desktop }}px;
+    }
+
+    .scrolling-logo-heading-{{ section.id }} {  
+      flex: 1 1 80%;
+      width: auto;
+    }
+
+    .scrolling-logo-item-{{ section.id }} {
+      padding-left: {{ scrolling_gap }}px;
+      width: calc(({{ card_width_desktop }}px * {{ section.blocks.size }}) + ({{ scrolling_gap }}px * {{ section.blocks.size }}));
+      gap: {{ scrolling_gap }}px;
+      animation-duration: {{ scrolling_velocity }}s;
+    }
+  }
+  
+{%- endstyle -%}
+
+{% unless full_width %}
+  <style>
+    .section-{{ section.id }}-settings {
+      max-width: {{ content_width }}px;
+    }
+  </style>
+{% endunless %}
+
+{% if margin_horizontal_mobile > 0 %}
+  <style>
+    .section-{{ section.id }} {
+      border-left: solid {{ border_color }} {{ border_thickness }}px;
+      border-right: solid {{ border_color }} {{ border_thickness }}px;
+    }
+    
+    @media(min-width: 1024px) {
+      .section-{{ section.id }} {
+        border-left: 0px;
+        border-right: 0px;
+      }
+    }
+  </style>
+{% endif %}
+
+{% if margin_horizontal > 0 %}
+  <style>
+    @media(min-width: 1024px) {
+      .section-{{ section.id }} {
+        border-left: solid {{ border_color }} {{ border_thickness }}px;
+        border-right: solid {{ border_color }} {{ border_thickness }}px;
+      }
+    }
+  </style>
+{% endif %}
+
+
+{% if heading_custom %}
+  <style>
+    .scrolling-logo-heading-{{ section.id }} * {
+      font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      font-weight: {{ heading_font.weight }};
+      font-style: {{ heading_font.style }};
+    }
+  </style>
+{% endif %}
+
+{% if pause_hover %}
+  <style>
+    .scrolling-logo-list-{{ section.id }}:hover .scrolling-logo-item-{{ section.id }} {
+      animation-play-state: paused 
+    }
+  </style>
+{% endif %}
+  
+{% capture blocks %}
+  <div class="scrolling-logo-item-{{ section.id }}">
+    {% for block in section.blocks %}
+      <{% if block.settings.url != blank %}a href="{{ block.settings.url }}"{% else %}div{% endif %} class="scrolling-logo-slide-{{ section.id }} {% if card_shadow %}card-shadow{% endif %}">
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" {% if lazy %}loading="lazy"{% endif %}>
+          {% else %}
+            {{ 'image' | placeholder_svg_tag }}
+          {% endif %}
+  
+        </{% if block.settings.url != blank %}a{% else %}div{% endif %}>
+    {% endfor %}
+  </div>
+{% endcapture %}
+
+<div class="section-{{ section.id }} scrolling-{{ section.id }}" style="background-color:{{ background_color }};">
+    <div class="section-{{ section.id }}-settings">
+      <div class="scrolling-logo-body-{{ section.id }}">
+        {% if heading != blank %}
+          <div class="scrolling-logo-heading-{{ section.id }}">{{ heading }}</div>
+        {% endif %}
+        <div class="scrolling-logo-slider-{{ section.id }}">
+          <div class="scrolling-logo-list-{{ section.id }}">
+            {% for item in (1..4) %}
+              {{ blocks }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "SS - Scrolling logo #5",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "range",
+        "id": "layout_radius",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Roundness",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "layout_border_thickness",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 1
+      },
+      {
+        "type": "header",
+        "content": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Text",
+        "default": "<h2>Scrolling logo cloud #5</h2>"
+      },
+      {
+        "type": "checkbox",
+        "id": "heading_custom",
+        "label": "Use custom font",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Font family",
+        "default": "josefin_sans_n4",
+        "visible_if": "{{ section.settings.heading_custom }}"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "heading_size_mobile",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size - mobile",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "heading_height",
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "%",
+        "label": "Line height",
+        "default": 130
+      },
+      {
+        "type": "header",
+        "content": "Scrolling"
+      },
+      {
+        "type": "range",
+        "id": "scrolling_velocity",
+        "min": 10,
+        "max": 150,
+        "step": 2,
+        "label": "Speed",
+        "info": "âš¡ <----------------> ðŸŒ",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "scrolling_velocity_mobile",
+        "min": 10,
+        "max": 150,
+        "step": 2,
+        "label": "Speed - mobile",
+        "info": "âš¡ <----------------> ðŸŒ",
+        "default": 30
+      },
+      {
+        "type": "select",
+        "id": "scrolling_direction",
+        "label": "Direction",
+        "default": "left",
+        "options": [
+          {
+            "label": "Left",
+            "value": "left"
+          },
+          {
+            "label": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id":"pause_hover",
+        "label": "Pause on hover",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "range",
+        "id": "scrolling_gap",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Gap",
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "scrolling_gap_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Gap - mobile",
+        "default": 30
+      },
+      {
+        "type": "header",
+        "content": "Card"
+      },
+      {
+        "type": "range",
+        "id": "card_width_desktop",
+        "min": 100,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "Width",
+        "default": 130
+      },
+      {
+        "type": "range",
+        "id": "card_width_mobile",
+        "min": 100,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "Width - mobile",
+        "default": 100
+      },
+      {
+        "type": "header",
+        "content": "Layout colors"
+      },
+      {
+        "type": "color",
+        "label": "Heading",
+        "id": "heading_color",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "label": "Background",
+        "id": "layout_bg_color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "layout_border_color",
+        "default": "#121212"
+      },
+      {
+        "type": "header",
+        "content": "Section colors"
+      },
+      {
+        "type": "color",
+        "label": "Background",
+        "id": "background_color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "label": "Border",
+        "id": "border_color",
+        "default": "#121212"
+      },
+      {
+        "type": "header",
+        "content": "Section margin (outside)"
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "margin_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "margin_horizontal",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "rem",
+        "label": "Sides",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "margin_horizontal_mobile",
+        "min": 0,
+        "max": 15,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Sides - mobile",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Section padding (inside)"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_horizontal",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "rem",
+        "label": "Sides",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "padding_horizontal_mobile",
+        "min": 0,
+        "max": 15,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Sides - mobile",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Section"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "content_width",
+        "min": 800,
+        "max": 2000,
+        "step": 100,
+        "unit": "px",
+        "label": "Section content width",
+        "default": 1200
+      },
+      {
+        "type": "range",
+        "id": "border_thickness",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Border thickness",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "section_radius",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Roundness",
+        "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "lazy",
+        "label": "Lazy load",
+        "info": "Lazy load images for speed optimisation",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "SS - Scrolling logo cloud #5",
+        "blocks": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
