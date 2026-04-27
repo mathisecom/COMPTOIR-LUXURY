@@ -81,12 +81,7 @@
       "name": "Featured collection",
       "settings": {
         "collection": "",
-        "products": [
-          "baskets-americass-cup-3",
-          "baskets-americass-cup-2",
-          "baskets-americass-cup-1",
-          "baskets-americass-cup"
-        ],
+        "products": [],
         "full_width": true,
         "stack_products": false,
         "show_progress_bar": true,
