@@ -320,6 +320,81 @@
         "padding_bottom": 0
       }
     },
+    "imagewith_UhMUGk": {
+      "type": "imagewith",
+      "blocks": {
+        "feature_tB3nEt": {
+          "type": "feature",
+          "settings": {
+            "text": "Réduit la sensation de brûlure des yeux",
+            "icon": "check"
+          }
+        },
+        "feature_DtXeWX": {
+          "type": "feature",
+          "settings": {
+            "text": "Atténue les maux de tête liés aux écrans",
+            "icon": "check"
+          }
+        },
+        "feature_Xw6cNb": {
+          "type": "feature",
+          "settings": {
+            "text": "Concentration prolongée, productivité assurée",
+            "icon": "check"
+          }
+        }
+      },
+      "block_order": [
+        "feature_tB3nEt",
+        "feature_DtXeWX",
+        "feature_Xw6cNb"
+      ],
+      "name": "Image avec texte",
+      "settings": {
+        "image_position": "left",
+        "image_aspect": "3 / 4",
+        "image_width": 50,
+        "image_radius": 0,
+        "heading": "Le Luxe à Porté de Main.",
+        "heading_font": "theme",
+        "heading_size": 44,
+        "heading_weight": "500",
+        "description": "<p>Conçues pour les heures passées sur écran, elles protègent vos yeux et favorisent une concentration durable.</p>",
+        "text_size": 16,
+        "label": "Pourquoi les porter :",
+        "label_size": 13,
+        "icon_style": "filled",
+        "icon_size": 24,
+        "feature_size": 15,
+        "feature_gap": 12,
+        "button_text": "Découvrez NOS COLLECTIONS",
+        "button_link": "",
+        "button_size": 13,
+        "button_radius": 4,
+        "button_uppercase": true,
+        "button_full_width": false,
+        "button_full_width_mobile": false,
+        "bg_color": "#ffffff",
+        "heading_color": "#111111",
+        "text_color": "#444444",
+        "label_color": "#111111",
+        "feature_text_color": "#222222",
+        "icon_bg_color": "#111111",
+        "icon_color": "#ffffff",
+        "button_bg": "#111111",
+        "button_text_color": "#ffffff",
+        "button_bg_hover": "#333333",
+        "vertical_align": "center",
+        "text_align": "left",
+        "mobile_text_align": "left",
+        "mobile_image_position": "top",
+        "column_gap": 80,
+        "max_width": 1280,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "rich_text_zwLnzL": {
       "type": "rich-text",
       "blocks": {
@@ -673,6 +748,7 @@
     "rich_text_Mq86CA",
     "scrolling_text_AFTtbd",
     "video_slider_P9aJbX",
+    "imagewith_UhMUGk",
     "rich_text_zwLnzL",
     "collection_list_yGUhXB",
     "rich_text_wdjT9b",
