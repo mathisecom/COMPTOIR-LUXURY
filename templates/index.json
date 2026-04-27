@@ -61,12 +61,12 @@
         "show_progress_bar": true,
         "products_count": 6,
         "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
+        "products_per_row_desktop": 4,
         "subheading": "",
-        "title": "MEILLEURES VENTES",
+        "title": "",
         "content": "",
         "link_url": "",
-        "link_text": "DÉCOUVRIR",
+        "link_text": "",
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -74,6 +74,34 @@
         "heading_gradient": "",
         "product_card_background": "",
         "product_card_text_color": ""
+      }
+    },
+    "rich_text_8PMmFb": {
+      "type": "rich-text",
+      "blocks": {
+        "button_JwDj6M": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "xl",
+            "text": "TOUT DÉCOUVRIR",
+            "url": "",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_JwDj6M"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "faq": {
@@ -133,6 +161,7 @@
   "order": [
     "slideshow",
     "featured_collection_DCz8XL",
+    "rich_text_8PMmFb",
     "faq"
   ]
 }
