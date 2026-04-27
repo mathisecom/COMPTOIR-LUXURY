@@ -153,12 +153,20 @@
             "title": "Puis-je modifier ou annuler ma commande apres l'avoir passée ?",
             "content": "<p>Les modifications ou annulations sont possibles dans un délai limité après la passation de la commande. Veuillez nous contacter le plus rapidement possible pour toute modification.</p>"
           }
+        },
+        "item_gFyU9w": {
+          "type": "item",
+          "settings": {
+            "title": "Proposez-vous des livraisons à l'internationales ?",
+            "content": "<p>Oui, nous livrons dans de nombreux pays à travers le monde. Les frais de livraison internationale et les délais peuvent varier selon la destination.</p>"
+          }
         }
       },
       "block_order": [
         "166442457738b23caf-0",
         "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "166442457738b23caf-2",
+        "item_gFyU9w"
       ],
       "settings": {
         "full_width": false,
