@@ -127,7 +127,9 @@
       "name": "Featured collection",
       "settings": {
         "collection": "",
-        "products": [],
+        "products": [
+          "puffer-toy-en-cuir-dagneau"
+        ],
         "full_width": true,
         "stack_products": false,
         "show_progress_bar": true,
