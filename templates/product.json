@@ -72,6 +72,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "liquid_payQEK": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .stock-indicator {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    font-family: inherit;\n    font-size: 14px;\n    font-weight: 500;\n    color: #1a1a1a;\n    line-height: 1;\n  }\n  .stock-indicator__dot {\n    position: relative;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    background: #ff8c1a;\n    flex-shrink: 0;\n  }\n  .stock-indicator__dot::before {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    border-radius: 50%;\n    background: #ff8c1a;\n    opacity: 0.7;\n    animation: stock-pulse 1.6s ease-out infinite;\n  }\n  @keyframes stock-pulse {\n    0% {\n      transform: scale(1);\n      opacity: 0.7;\n    }\n    100% {\n      transform: scale(2.6);\n      opacity: 0;\n    }\n  }\n  @media (prefers-reduced-motion: reduce) {\n    .stock-indicator__dot::before {\n      animation: none;\n    }\n  }\n</style>\n\n<span class=\"stock-indicator\">\n  <span class=\"stock-indicator__dot\" aria-hidden=\"true\"></span>\n  Stock faible\n</span>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -114,6 +120,7 @@
         "description",
         "variant_picker",
         "quantity_selector",
+        "liquid_payQEK",
         "buy_buttons",
         "collapsible_text_8TjPNC",
         "collapsible_text_nrrxFg"
