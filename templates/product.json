@@ -158,6 +158,22 @@
         "input_text_color": ""
       }
     },
+    "scrolling_text_3PYPAe": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "text_gradient": ""
+      }
+    },
     "rich_text_mWGdGA": {
       "type": "rich-text",
       "blocks": {
@@ -263,6 +279,81 @@
         "testimonial_card_text_color": ""
       }
     },
+    "imagewith_pWz9Pi": {
+      "type": "imagewith",
+      "blocks": {
+        "feature_JRi3my": {
+          "type": "feature",
+          "settings": {
+            "text": "Réduit la sensation de brûlure des yeux",
+            "icon": "check"
+          }
+        },
+        "feature_pMNn6R": {
+          "type": "feature",
+          "settings": {
+            "text": "Atténue les maux de tête liés aux écrans",
+            "icon": "check"
+          }
+        },
+        "feature_wz8cJL": {
+          "type": "feature",
+          "settings": {
+            "text": "Concentration prolongée, productivité assurée",
+            "icon": "check"
+          }
+        }
+      },
+      "block_order": [
+        "feature_JRi3my",
+        "feature_pMNn6R",
+        "feature_wz8cJL"
+      ],
+      "name": "Image avec texte",
+      "settings": {
+        "image_position": "left",
+        "image_aspect": "3 / 4",
+        "image_width": 50,
+        "image_radius": 0,
+        "heading": "Focus & confort.",
+        "heading_font": "serif",
+        "heading_size": 44,
+        "heading_weight": "400",
+        "description": "<p>Conçues pour les heures passées sur écran, elles protègent vos yeux et favorisent une concentration durable.</p>",
+        "text_size": 16,
+        "label": "Pourquoi les porter :",
+        "label_size": 13,
+        "icon_style": "filled",
+        "icon_size": 24,
+        "feature_size": 15,
+        "feature_gap": 12,
+        "button_text": "obtenir maintenant",
+        "button_link": "#shopify-section-template--28100847829374__main",
+        "button_size": 13,
+        "button_radius": 4,
+        "button_uppercase": true,
+        "button_full_width": false,
+        "button_full_width_mobile": false,
+        "bg_color": "#ffffff",
+        "heading_color": "#111111",
+        "text_color": "#444444",
+        "label_color": "#111111",
+        "feature_text_color": "#222222",
+        "icon_bg_color": "#111111",
+        "icon_color": "#ffffff",
+        "button_bg": "#111111",
+        "button_text_color": "#ffffff",
+        "button_bg_hover": "#333333",
+        "vertical_align": "center",
+        "text_align": "left",
+        "mobile_text_align": "left",
+        "mobile_image_position": "top",
+        "column_gap": 80,
+        "max_width": 1280,
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -290,6 +381,8 @@
     "main",
     "rich_text_mWGdGA",
     "testimonials_NpAVnL",
+    "scrolling_text_3PYPAe",
+    "imagewith_pWz9Pi",
     "related-products"
   ]
 }
