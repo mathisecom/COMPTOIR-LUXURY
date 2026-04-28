@@ -22,12 +22,12 @@
         "button_MxmLzD": {
           "type": "button",
           "settings": {
-            "style": "outline",
+            "style": "fill",
             "size": "base",
             "text": "DÉCOUVRIR NOS COLLECTION",
             "url": "",
-            "background": "",
-            "text_color": "#ffffff"
+            "background": "#ffffff",
+            "text_color": "#121212"
           }
         }
       },
@@ -230,23 +230,6 @@
         "text_color": ""
       }
     },
-    "scrolling_text_AFTtbd": {
-      "type": "scrolling-text",
-      "disabled": true,
-      "name": "Scrolling text",
-      "settings": {
-        "full_width": true,
-        "text": "Promotion text",
-        "text_size": "small",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 10,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "text_gradient": ""
-      }
-    },
     "video_slider_P9aJbX": {
       "type": "video-slider",
       "blocks": {
@@ -435,7 +418,7 @@
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
-        "scrolling_speed": 10,
+        "scrolling_speed": 7,
         "background": "#121212",
         "background_gradient": "",
         "text_color": "#ffffff",
@@ -894,7 +877,6 @@
     "rich_text_8PMmFb",
     "featured_collection_DCz8XL",
     "rich_text_Mq86CA",
-    "scrolling_text_AFTtbd",
     "video_slider_P9aJbX",
     "imagewith_UhMUGk",
     "scrolling_text_grEa78",
