@@ -896,7 +896,8 @@
         "logo_Fgz9Fg": {
           "type": "logo",
           "settings": {
-            "logo_width": 70,
+            "logo": "shopify://shop_images/CREA_1080X1080_-_2026-04-28T232912.739.png",
+            "logo_width": 80,
             "link": ""
           }
         }
