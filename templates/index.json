@@ -30,12 +30,14 @@
         "image_GTyY4Q": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_18.png",
             "url": ""
           }
         },
         "image_Uj4QfE": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_20.png",
             "url": ""
           }
         },
@@ -73,9 +75,9 @@
         "scrolling_direction": "left",
         "pause_hover": false,
         "scrolling_gap": 60,
-        "scrolling_gap_mobile": 24,
+        "scrolling_gap_mobile": 14,
         "card_width_desktop": 130,
-        "card_width_mobile": 100,
+        "card_width_mobile": 120,
         "heading_color": "#121212",
         "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
