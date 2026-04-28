@@ -718,7 +718,7 @@
       "name": "Instagram Feed",
       "settings": {
         "title": "Suivre @lecomptoirluxury",
-        "handle": "",
+        "handle": "comptoirluxury",
         "title_size": 18,
         "title_weight": "700",
         "title_color": "#111111",
