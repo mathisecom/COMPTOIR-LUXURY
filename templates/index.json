@@ -461,6 +461,7 @@
           "type": "collection",
           "settings": {
             "collection": "sac-a-main",
+            "image": "shopify://shop_images/Nouveau_projet_4.webp",
             "subheading": "",
             "title": "",
             "url": "",
