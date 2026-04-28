@@ -1,0 +1,369 @@
+{% comment %}
+  Section : Instagram Feed — @yepoda.fr style
+  Ajout : Sections > Ajouter une section > "instagram-feed"
+  ou via un bloc HTML personnalisé dans le theme editor.
+{% endcomment %}
+
+<section class="ig-feed-section" id="ig-feed-{{ section.id }}">
+  <div class="ig-feed-inner">
+
+    {% if section.settings.title != blank %}
+      <a
+        href="https://www.instagram.com/{{ section.settings.handle | remove: '@' }}/"
+        target="_blank"
+        rel="noopener"
+        class="ig-feed-title"
+        aria-label="Voir notre Instagram"
+      >
+        {{ section.settings.title }}
+      </a>
+    {% endif %}
+
+    <div class="ig-feed-track" role="list" aria-label="Feed Instagram">
+      {% for block in section.blocks %}
+        {% if block.type == 'image' %}
+          <div class="ig-feed-item" role="listitem" {{ block.shopify_attributes }}>
+            <a
+              href="{{ block.settings.link | default: '#' }}"
+              target="_blank"
+              rel="noopener"
+              class="ig-feed-link"
+              aria-label="Voir la publication Instagram"
+            >
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 600 | image_tag:
+                  loading: 'lazy',
+                  widths: '200, 300, 400, 600',
+                  sizes: '(max-width: 600px) 33vw, 17vw',
+                  alt: block.settings.alt | default: 'Photo Instagram'
+                }}
+              {% else %}
+                <div class="ig-feed-placeholder" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="4"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                </div>
+              {% endif %}
+              <div class="ig-feed-overlay" aria-hidden="true">
+                <svg class="ig-heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #ig-feed-{{ section.id }} {
+    --ig-gap: 4px;
+    --ig-cols: {{ section.settings.columns | default: 6 }};
+    --ig-radius: {{ section.settings.border_radius | default: 2 }}px;
+    --ig-overlay-color: rgba(0, 0, 0, 0.22);
+    --ig-transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: {{ section.settings.padding_vertical | default: 40 }}px 0;
+    background: {{ section.settings.bg_color | default: 'transparent' }};
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-inner {
+    max-width: {{ section.settings.max_width | default: 1400 }}px;
+    margin: 0 auto;
+    padding: 0 {{ section.settings.padding_horizontal | default: 20 }}px;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-title {
+    display: inline-block;
+    font-family: {{ section.settings.font_family | default: 'inherit' }};
+    font-size: {{ section.settings.title_size | default: 18 }}px;
+    font-weight: {{ section.settings.title_weight | default: 700 }};
+    color: {{ section.settings.title_color | default: '#111111' }};
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-bottom: {{ section.settings.title_margin | default: 16 }}px;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-title:hover {
+    opacity: 0.7;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-track {
+    display: flex;
+    gap: var(--ig-gap);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-item {
+    flex: 0 0 calc(100% / var(--ig-cols) - var(--ig-gap) * (var(--ig-cols) - 1) / var(--ig-cols));
+    min-width: 80px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--ig-radius);
+    scroll-snap-align: start;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform var(--ig-transition);
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-item:hover img {
+    transform: scale(1.07);
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--ig-overlay-color);
+    opacity: 0;
+    transition: opacity var(--ig-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-item:hover .ig-feed-overlay {
+    opacity: 1;
+  }
+
+  #ig-feed-{{ section.id }} .ig-heart {
+    width: 28px;
+    height: 28px;
+    transform: scale(0.7);
+    transition: transform var(--ig-transition);
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-item:hover .ig-heart {
+    transform: scale(1);
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f0ede8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0aba4;
+  }
+
+  #ig-feed-{{ section.id }} .ig-feed-placeholder svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #ig-feed-{{ section.id }} {
+      --ig-cols: {{ section.settings.mobile_columns | default: 3 }};
+    }
+
+    #ig-feed-{{ section.id }} .ig-feed-inner {
+      padding: 0 {{ section.settings.padding_horizontal_mobile | default: 12 }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Instagram Feed",
+  "tag": "section",
+  "class": "ig-feed-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Texte du titre",
+      "default": "Suivre @yepoda.fr"
+    },
+    {
+      "type": "text",
+      "id": "handle",
+      "label": "Handle Instagram (sans @)",
+      "default": "yepoda.fr"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre (px)",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Graisse du titre",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "title_margin",
+      "label": "Espace sous le titre (px)",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Grille"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Colonnes sur desktop",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Colonnes sur mobile",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Arrondi des images (px)",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Mise en page"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largeur max (px)",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Espacement vertical (px)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Marges latérales desktop (px)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "label": "Marges latérales mobile (px)",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Lien (publication Instagram)"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Texte alternatif (accessibilité)",
+          "default": "Photo Instagram"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Feed",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}
