@@ -635,12 +635,14 @@
         "image_RGaUtB": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_99.jpg",
             "url": ""
           }
         },
         "image_U9rCq6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_100.jpg",
             "url": ""
           }
         },
