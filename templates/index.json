@@ -447,6 +447,7 @@
           "type": "collection",
           "settings": {
             "collection": "sneakers",
+            "image": "shopify://shop_images/Nouveau_projet_5.webp",
             "subheading": "",
             "title": "",
             "url": "",
