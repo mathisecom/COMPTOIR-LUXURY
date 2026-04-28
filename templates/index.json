@@ -395,7 +395,7 @@
         "feature_size": 15,
         "feature_gap": 12,
         "button_text": "Découvrez NOS COLLECTIONS",
-        "button_link": "",
+        "button_link": "shopify://collections/meilleurs-vente",
         "button_size": 13,
         "button_radius": 4,
         "button_uppercase": true,
