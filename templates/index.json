@@ -888,14 +888,15 @@
         "logo_BMWVEk": {
           "type": "logo",
           "settings": {
-            "logo_width": 120,
+            "logo": "shopify://shop_images/CREA_1080X1080_-_2026-04-28T232537.794.png",
+            "logo_width": 70,
             "link": ""
           }
         },
         "logo_Fgz9Fg": {
           "type": "logo",
           "settings": {
-            "logo_width": 120,
+            "logo_width": 70,
             "link": ""
           }
         }
@@ -912,12 +913,12 @@
         "content": "<h6>SUIVEZ-NOUS</h6>",
         "text_alignment": "center",
         "items_per_row": 5,
-        "background": "",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "logo_item_background": "",
+        "logo_item_background": "#ffffff",
         "logo_item_border": ""
       }
     },
