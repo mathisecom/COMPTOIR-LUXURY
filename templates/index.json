@@ -477,6 +477,7 @@
           "type": "collection",
           "settings": {
             "collection": "claquettes",
+            "image": "shopify://shop_images/Nouveau_projet_6.webp",
             "subheading": "",
             "title": "",
             "url": "",
@@ -499,7 +500,7 @@
         "full_width": true,
         "stack_collections": false,
         "collections_per_row_mobile": "1",
-        "collections_per_row": 3,
+        "collections_per_row": 4,
         "show_progress_bar": true,
         "subheading": "",
         "title": "",
