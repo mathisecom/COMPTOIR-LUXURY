@@ -756,17 +756,29 @@
           "settings": {
             "round_avatar": true,
             "show_rating": true,
-            "rating": 4,
-            "author": "Joshua A.",
+            "rating": 5,
+            "author": "Alicia S.",
             "title": "J’aime trop 😍",
             "content": "<p>Reçu aujourd’hui et j’aime trop 😍 ça taille bien et le rendu est propre</p>"
+          }
+        },
+        "testimonial_FGrnnC": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Olivia H.",
+            "title": "Je recommande !",
+            "content": "<p>Franchement pour le prix j’ai été choquée de la qualité, je recommande !</p>"
           }
         }
       },
       "block_order": [
         "testimonial_GQTtDE",
         "testimonial_a9VFgf",
-        "testimonial_4RTinM"
+        "testimonial_4RTinM",
+        "testimonial_FGrnnC"
       ],
       "name": "Testimonials",
       "settings": {
