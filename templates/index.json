@@ -279,8 +279,19 @@
         },
         "video_zn9Uae": {
           "type": "video",
-          "disabled": true,
           "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777380089244.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_FMfMDh": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777380015343.mp4",
             "video_url": "",
             "heading": "",
             "subheading": "",
@@ -294,7 +305,8 @@
         "video_bj8bcx",
         "video_f3feEB",
         "video_ihV7yc",
-        "video_zn9Uae"
+        "video_zn9Uae",
+        "video_FMfMDh"
       ],
       "name": "Slider vidéo",
       "settings": {
