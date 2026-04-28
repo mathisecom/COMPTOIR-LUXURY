@@ -15,13 +15,25 @@
         "heading_VVMzK7": {
           "type": "heading",
           "settings": {
-            "text": "Heading",
-            "heading_tag": "h1"
+            "text": "L’elegance au quotidien.",
+            "heading_tag": "h2"
+          }
+        },
+        "button_MxmLzD": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "size": "base",
+            "text": "DÉCOUVRIR NOS COLLECTION",
+            "url": "",
+            "background": "",
+            "text_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "heading_VVMzK7"
+        "heading_VVMzK7",
+        "button_MxmLzD"
       ],
       "name": "Video",
       "settings": {
