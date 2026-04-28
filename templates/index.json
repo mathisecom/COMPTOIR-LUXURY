@@ -869,6 +869,78 @@
         "accordion_background": "",
         "accordion_text_color": ""
       }
+    },
+    "instagramfeed_PH73Fw": {
+      "type": "instagramfeed",
+      "blocks": {
+        "image_6PDz8A": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_Tp3qEh": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_3wn86e": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_UVp8RB": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_xHEm9y": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_gTi3QD": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        }
+      },
+      "block_order": [
+        "image_6PDz8A",
+        "image_Tp3qEh",
+        "image_3wn86e",
+        "image_UVp8RB",
+        "image_xHEm9y",
+        "image_gTi3QD"
+      ],
+      "name": "Instagram Feed",
+      "settings": {
+        "title": "Suivre @lecomptoirluxury",
+        "handle": "",
+        "title_size": 18,
+        "title_weight": "700",
+        "title_color": "#111111",
+        "title_margin": 20,
+        "columns": 6,
+        "mobile_columns": 3,
+        "border_radius": 2,
+        "bg_color": "#ffffff",
+        "max_width": 1400,
+        "padding_vertical": 40,
+        "padding_horizontal": 20,
+        "padding_horizontal_mobile": 12
+      }
     }
   },
   "order": [
@@ -888,6 +960,7 @@
     "rich_text_dVtdPc",
     "logoscroll_aD6mkn",
     "testimonials_tEAPQT",
-    "faq"
+    "faq",
+    "instagramfeed_PH73Fw"
   ]
 }

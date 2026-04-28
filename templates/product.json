@@ -605,6 +605,84 @@
         "product_card_background": "",
         "product_card_text_color": ""
       }
+    },
+    "instagramfeed_nqnUJC": {
+      "type": "instagramfeed",
+      "blocks": {
+        "image_tLxfHe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-04-28T121520.367.jpg",
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_NWMXhf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-04-28T121339.861.jpg",
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_ywkbw8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/e7ae42f95df5f45c209bde4db188b18d.jpg",
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_jKzQke": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/439299b67ab42054e691f674662d763e.jpg",
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_JztAJW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_99.jpg",
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        },
+        "image_Gkbecg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-04-28T121330.265.jpg",
+            "link": "",
+            "alt": "Photo Instagram"
+          }
+        }
+      },
+      "block_order": [
+        "image_tLxfHe",
+        "image_NWMXhf",
+        "image_ywkbw8",
+        "image_jKzQke",
+        "image_JztAJW",
+        "image_Gkbecg"
+      ],
+      "name": "Instagram Feed",
+      "settings": {
+        "title": "Suivre @lecomptoirluxury",
+        "handle": "",
+        "title_size": 18,
+        "title_weight": "700",
+        "title_color": "#111111",
+        "title_margin": 16,
+        "columns": 6,
+        "mobile_columns": 3,
+        "border_radius": 2,
+        "bg_color": "#ffffff",
+        "max_width": 1400,
+        "padding_vertical": 40,
+        "padding_horizontal": 20,
+        "padding_horizontal_mobile": 12
+      }
     }
   },
   "order": [
@@ -616,6 +694,7 @@
     "imagewith_pWz9Pi",
     "video_slider_zJCwhV",
     "faq_eKHjfn",
-    "related-products"
+    "related-products",
+    "instagramfeed_nqnUJC"
   ]
 }
