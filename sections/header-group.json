@@ -27,11 +27,19 @@
             "text": "Des Pièces Inspirées Du Luxe",
             "url": ""
           }
+        },
+        "message_r78FKB": {
+          "type": "message",
+          "settings": {
+            "text": "Haute Qualité 1:1",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "message_7mDMJg",
-        "message"
+        "message",
+        "message_r78FKB"
       ],
       "settings": {
         "enable_sticky": false,
