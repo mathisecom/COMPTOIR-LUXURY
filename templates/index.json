@@ -44,12 +44,21 @@
         "image_7AQ3Fn": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_21.png",
             "url": ""
           }
         },
         "image_6eehpB": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_22.png",
+            "url": ""
+          }
+        },
+        "image_KBE9GE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_23.png",
             "url": ""
           }
         }
@@ -58,7 +67,8 @@
         "image_GTyY4Q",
         "image_Uj4QfE",
         "image_7AQ3Fn",
-        "image_6eehpB"
+        "image_6eehpB",
+        "image_KBE9GE"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
