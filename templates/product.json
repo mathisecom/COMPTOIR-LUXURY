@@ -21,7 +21,7 @@
         "liquid_Ney4ep": {
           "type": "liquid",
           "settings": {
-            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_7WeHTt\" data-block-type=\"liquid\">\n  <div class=\"product-info__liquid\">\n    <style>\n      #trustscore-container {\n        display: flex;\n        align-items: center;\n        font-family: inherit;\n        font-size: 14px;\n        color: #333;\n        max-width: 100%;\n        line-height: 1;\n        margin-top: 4px;\n      }\n      #trustscore-stars {\n        display: flex;\n        align-items: center;\n        margin-right: 8px;\n      }\n      #trustscore-stars img {\n        max-width: 80px;\n        width: 80px;\n        height: auto;\n        display: block;\n      }\n      #trustscore-text {\n        font-weight: 400;\n        white-space: nowrap;\n      }\n      #trustscore-text .highlight {\n        font-weight: 700;\n      }\n    </style>\n\n    <div id=\"trustscore-container\">\n      <div id=\"trustscore-stars\">\n        <img src=\"https://i.imgur.com/EHjNmTM.png\" alt=\"5 stars\">\n      </div>\n      <div id=\"trustscore-text\">\n        Trustscore <span class=\"highlight\">4,6</span> | 2,500+ avis clients\n      </div>\n    </div>\n  </div>\n</div>"
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_7WeHTt\" data-block-type=\"liquid\">\n  <div class=\"product-info__liquid\">\n    <style>\n      #trustscore-container {\n        display: flex;\n        align-items: center;\n        font-family: inherit;\n        font-size: 14px;\n        color: #333;\n        max-width: 100%;\n        line-height: 1;\n        margin-top: 4px;\n      }\n      #trustscore-stars {\n        display: flex;\n        align-items: center;\n        margin-right: 8px;\n      }\n      #trustscore-stars img {\n        max-width: 80px;\n        width: 80px;\n        height: auto;\n        display: block;\n      }\n      #trustscore-text {\n        font-weight: 400;\n        white-space: nowrap;\n      }\n      #trustscore-text .highlight {\n        font-weight: 700;\n      }\n    </style>\n\n    <div id=\"trustscore-container\">\n      <div id=\"trustscore-stars\">\n        <img src=\"https://i.imgur.com/EHjNmTM.png\" alt=\"5 stars\">\n      </div>\n      <div id=\"trustscore-text\">\n        Trustscore <span class=\"highlight\">4,6</span> | +3,500+ avis clients\n      </div>\n    </div>\n  </div>\n</div>"
           }
         },
         "title": {
@@ -679,7 +679,7 @@
         "border_radius": 2,
         "bg_color": "#ffffff",
         "max_width": 1400,
-        "padding_vertical": 40,
+        "padding_vertical": 24,
         "padding_horizontal": 20,
         "padding_horizontal_mobile": 12
       }
