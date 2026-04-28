@@ -537,29 +537,37 @@
         "item_dCg4CC": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Comment puis-je passer commande ?",
+            "content": "<p>Pour passer commande, choisissez simplement les articles que vous souhaitez acheter, ajoutez-les à votre panier, puis suivez les instructions de paiement et de livraison à la caisse.</p>"
           }
         },
         "item_pAp6jY": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Quels mode de paiement acceptez-vous ?",
+            "content": "<p>Nous acceptons divers modes de paiement, notamment les cartes de crédit/débit, PayPal, et éventuellement d'autres options en ligne. Tous les paiements sont sécurisés et cryptés pour votre sécurité.</p>"
           }
         },
         "item_aLrWLJ": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Puis-je modifier ou annuler ma commande apres l'avoir passée ?",
+            "content": "<p>Les modifications ou annulations sont possibles dans un délai limité après la passation de la commande. Veuillez nous contacter le plus rapidement possible pour toute modification.</p>"
+          }
+        },
+        "item_aJe73k": {
+          "type": "item",
+          "settings": {
+            "title": "Proposez-vous des livraisons à l'internationales ?",
+            "content": "<p>Oui, nous livrons dans de nombreux pays à travers le monde. Les frais de livraison internationale et les délais peuvent varier selon la destination.</p>"
           }
         }
       },
       "block_order": [
         "item_dCg4CC",
         "item_pAp6jY",
-        "item_aLrWLJ"
+        "item_aLrWLJ",
+        "item_aJe73k"
       ],
       "name": "FAQ",
       "settings": {
