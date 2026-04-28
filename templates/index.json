@@ -659,13 +659,21 @@
             "image": "shopify://shop_images/BANNER_MOBILE_-_2026-04-28T121339.861.jpg",
             "url": ""
           }
+        },
+        "image_7Ynknx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_MOBILE_-_2026-04-28T121520.367.jpg",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "image_RGaUtB",
         "image_U9rCq6",
         "image_MKa6Va",
-        "image_rRVJfE"
+        "image_rRVJfE",
+        "image_7Ynknx"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
@@ -761,7 +769,7 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "testimonial_card_background": "",
+        "testimonial_card_background": "#f8f7f4",
         "testimonial_card_text_color": ""
       }
     },
