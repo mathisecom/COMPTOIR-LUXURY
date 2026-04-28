@@ -40,6 +40,7 @@
     "cart_type": "drawer",
     "cart_icon": "tote_bag",
     "social_tiktok": "https://www.tiktok.com/@lecomptoirluxury",
+    "favicon": "shopify://shop_images/CREA_1080X1080_-_2026-04-28T150137.774.jpg",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
     "content_for_index": []
