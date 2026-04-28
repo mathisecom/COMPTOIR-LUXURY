@@ -21,7 +21,7 @@
         "liquid_Ney4ep": {
           "type": "liquid",
           "settings": {
-            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_7WeHTt\" data-block-type=\"liquid\">\n  <div class=\"product-info__liquid\">\n    <style>\n      #trustscore-container {\n        display: flex;\n        align-items: center;\n        font-family: inherit;\n        font-size: 14px;\n        color: #333;\n        max-width: 100%;\n        line-height: 1;\n        margin-top: 4px;\n      }\n      #trustscore-stars {\n        display: flex;\n        align-items: center;\n        margin-right: 8px;\n      }\n      #trustscore-stars img {\n        max-width: 80px;\n        width: 80px;\n        height: auto;\n        display: block;\n      }\n      #trustscore-text {\n        font-weight: 400;\n        white-space: nowrap;\n      }\n      #trustscore-text .highlight {\n        font-weight: 700;\n      }\n    </style>\n\n    <div id=\"trustscore-container\">\n      <div id=\"trustscore-stars\">\n        <img src=\"https://i.imgur.com/EHjNmTM.png\" alt=\"5 stars\">\n      </div>\n      <div id=\"trustscore-text\">\n        Trustscore <span class=\"highlight\">4,6</span> | +3,500+ avis clients\n      </div>\n    </div>\n  </div>\n</div>"
+            "liquid": "<div class=\"product-info__block-item\" data-block-id=\"liquid_7WeHTt\" data-block-type=\"liquid\">\n  <div class=\"product-info__liquid\">\n    <style>\n      #trustscore-container {\n        display: flex;\n        align-items: center;\n        font-family: inherit;\n        font-size: 14px;\n        color: #333;\n        max-width: 100%;\n        line-height: 1;\n        margin-top: 4px;\n      }\n      #trustscore-stars {\n        display: flex;\n        align-items: center;\n        margin-right: 8px;\n      }\n      #trustscore-stars img {\n        max-width: 80px;\n        width: 80px;\n        height: auto;\n        display: block;\n      }\n      #trustscore-text {\n        font-weight: 400;\n        white-space: nowrap;\n      }\n      #trustscore-text .highlight {\n        font-weight: 700;\n      }\n    </style>\n\n    <div id=\"trustscore-container\">\n      <div id=\"trustscore-stars\">\n        <img src=\"https://i.imgur.com/EHjNmTM.png\" alt=\"5 stars\">\n      </div>\n      <div id=\"trustscore-text\">\n        Trustscore <span class=\"highlight\">4,6</span> | +3,000 avis clients\n      </div>\n    </div>\n  </div>\n</div>"
           }
         },
         "title": {
@@ -107,7 +107,7 @@
             "icon": "none",
             "icon_width": 20,
             "title": "Livraison & Retour",
-            "content": "<p>Share some content to your customers about your products.</p>",
+            "content": "<p>Nos commandes sont expédiées et livrées sous <strong>7 à 13  jours ouvrables</strong> via <strong>La Poste Colissimo</strong>.<br/><br/><strong>Retour </strong></p><p>Les retours sont possibles pendant <strong>14 jours</strong> après la réception de la commande.<br/><br/>Si la demande de remboursement est validée, tu recevras ton remboursement sous <strong>5 à 10 jours ouvrés</strong> (délai géré par le processeur de paiement).</p><p>Les <strong>frais de retour</strong> sont pris en charge uniquement en cas de <strong>défaut du colis ou du produit nécessitant une prise en charge SAV</strong>.</p>",
             "page": ""
           }
         },
