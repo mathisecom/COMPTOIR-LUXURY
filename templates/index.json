@@ -41,10 +41,11 @@
         "allow_transparent_header": true,
         "autoplay": true,
         "video_size": "md",
+        "video": "shopify://files/videos/0428.mp4",
         "external_video_url": "",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 70
+        "overlay_opacity": 60
       }
     },
     "logoscroll_a34HcQ": {
