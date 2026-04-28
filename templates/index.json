@@ -41,8 +41,7 @@
         "allow_transparent_header": true,
         "autoplay": true,
         "video_size": "md",
-        "video": "shopify://files/videos/Women’s Fashion Campaign_ The Iconic GO-14 and Capucines Bags _ LOUIS VUITTON (1).mp4",
-        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "external_video_url": "",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 60
@@ -296,6 +295,7 @@
         },
         "video_zn9Uae": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_url": "",
             "heading": "",
