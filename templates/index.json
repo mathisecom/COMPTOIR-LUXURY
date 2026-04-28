@@ -11,6 +11,18 @@
   "sections": {
     "video_wVBHC8": {
       "type": "video",
+      "blocks": {
+        "heading_VVMzK7": {
+          "type": "heading",
+          "settings": {
+            "text": "Heading",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VVMzK7"
+      ],
       "name": "Video",
       "settings": {
         "full_width": true,
@@ -21,7 +33,7 @@
         "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 60
       }
     },
     "logoscroll_a34HcQ": {
