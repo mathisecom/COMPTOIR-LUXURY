@@ -425,6 +425,22 @@
         "padding_bottom": 80
       }
     },
+    "scrolling_text_grEa78": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "#121212",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
+      }
+    },
     "rich_text_zwLnzL": {
       "type": "rich-text",
       "blocks": {
@@ -880,6 +896,7 @@
     "scrolling_text_AFTtbd",
     "video_slider_P9aJbX",
     "imagewith_UhMUGk",
+    "scrolling_text_grEa78",
     "rich_text_zwLnzL",
     "collection_list_yGUhXB",
     "rich_text_wdjT9b",
