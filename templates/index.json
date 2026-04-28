@@ -27,13 +27,6 @@
     "logoscroll_a34HcQ": {
       "type": "logoscroll",
       "blocks": {
-        "image_GTyY4Q": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Nouveau_projet_18.png",
-            "url": ""
-          }
-        },
         "image_Uj4QfE": {
           "type": "image",
           "settings": {
@@ -61,14 +54,37 @@
             "image": "shopify://shop_images/Nouveau_projet_23.png",
             "url": ""
           }
+        },
+        "image_gQkxwP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_24.png",
+            "url": ""
+          }
+        },
+        "image_GTyY4Q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_18.png",
+            "url": ""
+          }
+        },
+        "image_UTG6M4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Nouveau_projet_25.png",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "image_GTyY4Q",
         "image_Uj4QfE",
         "image_7AQ3Fn",
         "image_6eehpB",
-        "image_KBE9GE"
+        "image_KBE9GE",
+        "image_gQkxwP",
+        "image_GTyY4Q",
+        "image_UTG6M4"
       ],
       "name": "SS - Scrolling logo cloud #5",
       "settings": {
@@ -85,9 +101,9 @@
         "scrolling_direction": "left",
         "pause_hover": false,
         "scrolling_gap": 60,
-        "scrolling_gap_mobile": 14,
-        "card_width_desktop": 130,
-        "card_width_mobile": 120,
+        "scrolling_gap_mobile": 8,
+        "card_width_desktop": 150,
+        "card_width_mobile": 130,
         "heading_color": "#121212",
         "layout_bg_color": "#ffffff",
         "layout_border_color": "#121212",
