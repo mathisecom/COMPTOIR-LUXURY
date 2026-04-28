@@ -432,7 +432,7 @@
         "collection_64KdyM": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "maillot-de-bain",
             "subheading": "",
             "title": "",
             "url": "",
@@ -440,7 +440,7 @@
             "text_position": "place-self-center text-center",
             "text_color": "#ffffff",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 38
           }
         },
         "collection_j7FDqU": {
