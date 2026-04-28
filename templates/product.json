@@ -620,14 +620,16 @@
         "logo_DVz6jx": {
           "type": "logo",
           "settings": {
-            "logo_width": 120,
+            "logo": "shopify://shop_images/CREA_1080X1080_-_2026-04-28T232537.794.png",
+            "logo_width": 70,
             "link": ""
           }
         },
         "logo_ceV3tj": {
           "type": "logo",
           "settings": {
-            "logo_width": 120,
+            "logo": "shopify://shop_images/CREA_1080X1080_-_2026-04-28T232912.739.png",
+            "logo_width": 80,
             "link": ""
           }
         }
@@ -649,7 +651,7 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "logo_item_background": "",
+        "logo_item_background": "#ffffff",
         "logo_item_border": ""
       }
     },
