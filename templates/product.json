@@ -488,6 +488,7 @@
       ],
       "name": "Image avec texte",
       "settings": {
+        "image": "shopify://shop_images/e7ae42f95df5f45c209bde4db188b18d.jpg",
         "image_position": "left",
         "image_aspect": "3 / 4",
         "image_width": 50,
