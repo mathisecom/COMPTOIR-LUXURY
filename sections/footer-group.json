@@ -77,10 +77,11 @@
         "newsletter": {
           "type": "newsletter",
           "settings": {
-            "image_width": 150,
+            "image": "shopify://shop_images/COMPTOIR_LUXURY_1.png",
+            "image_width": 160,
             "heading_size": "h3",
-            "title": "Newsletter -",
-            "content": ""
+            "title": "Newsletter",
+            "content": "<p>Inscris-toi pour recevoir les nouveautés.</p>"
           }
         },
         "links": {
