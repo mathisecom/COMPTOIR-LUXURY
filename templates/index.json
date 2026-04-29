@@ -230,121 +230,6 @@
         "text_color": ""
       }
     },
-    "video_slider_P9aJbX": {
-      "type": "video-slider",
-      "blocks": {
-        "video_BnV9kK": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196453015.mp4",
-            "video_url": "",
-            "heading": "",
-            "subheading": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "video_bj8bcx": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196412527.mp4",
-            "video_url": "",
-            "heading": "",
-            "subheading": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "video_f3feEB": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196378773.mp4",
-            "video_url": "",
-            "heading": "",
-            "subheading": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "video_ihV7yc": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196484342.mp4",
-            "video_url": "",
-            "heading": "",
-            "subheading": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "video_zn9Uae": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777380089244.mp4",
-            "video_url": "",
-            "heading": "",
-            "subheading": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        },
-        "video_FMfMDh": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777380015343.mp4",
-            "video_url": "",
-            "heading": "",
-            "subheading": "",
-            "button_text": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "video_BnV9kK",
-        "video_bj8bcx",
-        "video_f3feEB",
-        "video_ihV7yc",
-        "video_zn9Uae",
-        "video_FMfMDh"
-      ],
-      "name": "Slider vidéo",
-      "settings": {
-        "title": "Adopté Par Nos Clientes",
-        "subtitle": "",
-        "text_align": "center",
-        "title_size": 26,
-        "aspect_ratio": "portrait",
-        "border_radius": 10,
-        "slides_desktop": 4,
-        "slides_tablet": 2,
-        "slides_mobile": 1.8,
-        "gap_desktop": 22,
-        "gap_mobile": 16,
-        "loop_slider": true,
-        "scroll_mode": "marquee",
-        "marquee_direction": "right",
-        "marquee_speed": 5,
-        "autoplay_slider": true,
-        "autoplay_speed": 2,
-        "pause_on_hover": false,
-        "show_arrows": false,
-        "arrows_mobile": "none",
-        "show_pagination": false,
-        "autoplay_video": true,
-        "loop_video": true,
-        "show_controls": false,
-        "show_mute_button": true,
-        "bg_color": "#ffffff",
-        "text_color": "#111111",
-        "accent_color": "#111111",
-        "button_bg": "#ffffff",
-        "button_text_color": "#111111",
-        "max_width": 1440,
-        "padding_top": 16,
-        "padding_bottom": 0
-      }
-    },
     "imagewith_UhMUGk": {
       "type": "imagewith",
       "blocks": {
@@ -423,6 +308,7 @@
     },
     "scrolling_text_grEa78": {
       "type": "scrolling-text",
+      "disabled": true,
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
@@ -549,6 +435,121 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": ""
+      }
+    },
+    "video_slider_P9aJbX": {
+      "type": "video-slider",
+      "blocks": {
+        "video_BnV9kK": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196453015.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_bj8bcx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196412527.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_f3feEB": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196378773.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_ihV7yc": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196484342.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_zn9Uae": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777380089244.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "video_FMfMDh": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777380015343.mp4",
+            "video_url": "",
+            "heading": "",
+            "subheading": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_BnV9kK",
+        "video_bj8bcx",
+        "video_f3feEB",
+        "video_ihV7yc",
+        "video_zn9Uae",
+        "video_FMfMDh"
+      ],
+      "name": "Slider vidéo",
+      "settings": {
+        "title": "Adopté Par Nos Clientes",
+        "subtitle": "",
+        "text_align": "center",
+        "title_size": 26,
+        "aspect_ratio": "portrait",
+        "border_radius": 10,
+        "slides_desktop": 4,
+        "slides_tablet": 2,
+        "slides_mobile": 1.8,
+        "gap_desktop": 22,
+        "gap_mobile": 16,
+        "loop_slider": true,
+        "scroll_mode": "marquee",
+        "marquee_direction": "right",
+        "marquee_speed": 5,
+        "autoplay_slider": true,
+        "autoplay_speed": 2,
+        "pause_on_hover": false,
+        "show_arrows": false,
+        "arrows_mobile": "none",
+        "show_pagination": false,
+        "autoplay_video": true,
+        "loop_video": true,
+        "show_controls": false,
+        "show_mute_button": true,
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "accent_color": "#111111",
+        "button_bg": "#ffffff",
+        "button_text_color": "#111111",
+        "max_width": 1440,
+        "padding_top": 16,
+        "padding_bottom": 0
       }
     },
     "rich_text_wdjT9b": {
@@ -1008,11 +1009,11 @@
     "rich_text_8PMmFb",
     "featured_collection_DCz8XL",
     "rich_text_Mq86CA",
-    "video_slider_P9aJbX",
-    "imagewith_UhMUGk",
-    "scrolling_text_grEa78",
     "rich_text_zwLnzL",
     "collection_list_yGUhXB",
+    "imagewith_UhMUGk",
+    "scrolling_text_grEa78",
+    "video_slider_P9aJbX",
     "rich_text_wdjT9b",
     "featured_collection_jbiz3n",
     "rich_text_E8t83H",
