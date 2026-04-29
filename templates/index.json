@@ -25,7 +25,7 @@
             "style": "fill",
             "size": "base",
             "text": "DÉCOUVRIR NOS COLLECTION",
-            "url": "",
+            "url": "#shopify-section-template--28100847927678__collection_list_yGUhXB",
             "background": "#ffffff",
             "text_color": "#121212"
           }
@@ -230,99 +230,6 @@
         "text_color": ""
       }
     },
-    "imagewith_UhMUGk": {
-      "type": "imagewith",
-      "blocks": {
-        "feature_tB3nEt": {
-          "type": "feature",
-          "settings": {
-            "text": "Retour sous 30 jours",
-            "icon": "arrow"
-          }
-        },
-        "feature_DtXeWX": {
-          "type": "feature",
-          "settings": {
-            "text": "Livraison Offerte",
-            "icon": "check"
-          }
-        },
-        "feature_Xw6cNb": {
-          "type": "feature",
-          "settings": {
-            "text": "Qualité 1:1",
-            "icon": "star"
-          }
-        }
-      },
-      "block_order": [
-        "feature_tB3nEt",
-        "feature_DtXeWX",
-        "feature_Xw6cNb"
-      ],
-      "name": "Image avec texte",
-      "settings": {
-        "image": "shopify://shop_images/439299b67ab42054e691f674662d763e.jpg",
-        "image_position": "left",
-        "image_aspect": "3 / 4",
-        "image_width": 50,
-        "image_radius": 0,
-        "heading": "Le Luxe à Porté de Main.",
-        "heading_font": "theme",
-        "heading_size": 44,
-        "heading_weight": "500",
-        "description": "",
-        "text_size": 16,
-        "label": "Pourquoi Nous Choisir :",
-        "label_size": 13,
-        "icon_style": "filled",
-        "icon_size": 24,
-        "feature_size": 15,
-        "feature_gap": 12,
-        "button_text": "Découvrez NOS COLLECTIONS",
-        "button_link": "#shopify-section-template--28100847927678__collection_list_yGUhXB",
-        "button_size": 13,
-        "button_radius": 4,
-        "button_uppercase": true,
-        "button_full_width": false,
-        "button_full_width_mobile": false,
-        "bg_color": "#ffffff",
-        "heading_color": "#111111",
-        "text_color": "#444444",
-        "label_color": "#111111",
-        "feature_text_color": "#222222",
-        "icon_bg_color": "#111111",
-        "icon_color": "#ffffff",
-        "button_bg": "#111111",
-        "button_text_color": "#ffffff",
-        "button_bg_hover": "#333333",
-        "vertical_align": "center",
-        "text_align": "left",
-        "mobile_text_align": "left",
-        "mobile_image_position": "top",
-        "column_gap": 80,
-        "max_width": 1280,
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
-    "scrolling_text_grEa78": {
-      "type": "scrolling-text",
-      "disabled": true,
-      "name": "Scrolling text",
-      "settings": {
-        "full_width": true,
-        "text": "",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 7,
-        "background": "#121212",
-        "background_gradient": "",
-        "text_color": "#ffffff",
-        "text_gradient": ""
-      }
-    },
     "rich_text_zwLnzL": {
       "type": "rich-text",
       "blocks": {
@@ -435,6 +342,99 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": ""
+      }
+    },
+    "imagewith_UhMUGk": {
+      "type": "imagewith",
+      "blocks": {
+        "feature_tB3nEt": {
+          "type": "feature",
+          "settings": {
+            "text": "Retour sous 30 jours",
+            "icon": "arrow"
+          }
+        },
+        "feature_DtXeWX": {
+          "type": "feature",
+          "settings": {
+            "text": "Livraison Offerte",
+            "icon": "check"
+          }
+        },
+        "feature_Xw6cNb": {
+          "type": "feature",
+          "settings": {
+            "text": "Qualité 1:1",
+            "icon": "star"
+          }
+        }
+      },
+      "block_order": [
+        "feature_tB3nEt",
+        "feature_DtXeWX",
+        "feature_Xw6cNb"
+      ],
+      "name": "Image avec texte",
+      "settings": {
+        "image": "shopify://shop_images/439299b67ab42054e691f674662d763e.jpg",
+        "image_position": "left",
+        "image_aspect": "3 / 4",
+        "image_width": 50,
+        "image_radius": 0,
+        "heading": "Le Luxe à Porté de Main.",
+        "heading_font": "theme",
+        "heading_size": 44,
+        "heading_weight": "500",
+        "description": "",
+        "text_size": 16,
+        "label": "Pourquoi Nous Choisir :",
+        "label_size": 13,
+        "icon_style": "filled",
+        "icon_size": 24,
+        "feature_size": 15,
+        "feature_gap": 12,
+        "button_text": "Découvrez NOS COLLECTIONS",
+        "button_link": "#shopify-section-template--28100847927678__collection_list_yGUhXB",
+        "button_size": 13,
+        "button_radius": 4,
+        "button_uppercase": true,
+        "button_full_width": false,
+        "button_full_width_mobile": false,
+        "bg_color": "#ffffff",
+        "heading_color": "#111111",
+        "text_color": "#444444",
+        "label_color": "#111111",
+        "feature_text_color": "#222222",
+        "icon_bg_color": "#111111",
+        "icon_color": "#ffffff",
+        "button_bg": "#111111",
+        "button_text_color": "#ffffff",
+        "button_bg_hover": "#333333",
+        "vertical_align": "center",
+        "text_align": "left",
+        "mobile_text_align": "left",
+        "mobile_image_position": "top",
+        "column_gap": 80,
+        "max_width": 1280,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "scrolling_text_grEa78": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 7,
+        "background": "#121212",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
       }
     },
     "video_slider_P9aJbX": {
