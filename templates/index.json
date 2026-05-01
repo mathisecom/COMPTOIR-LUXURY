@@ -273,6 +273,21 @@
             "overlay_opacity": 40
           }
         },
+        "collection_zitY4t": {
+          "type": "collection",
+          "settings": {
+            "collection": "claquettes",
+            "image": "shopify://shop_images/Nouveau_projet_6.webp",
+            "subheading": "",
+            "title": "",
+            "url": "shopify://collections/claquettes",
+            "heading_tag": "h3",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 40
+          }
+        },
         "collection_j7FDqU": {
           "type": "collection",
           "settings": {
@@ -302,28 +317,13 @@
             "overlay_color": "#000000",
             "overlay_opacity": 40
           }
-        },
-        "collection_zitY4t": {
-          "type": "collection",
-          "settings": {
-            "collection": "claquettes",
-            "image": "shopify://shop_images/Nouveau_projet_6.webp",
-            "subheading": "",
-            "title": "",
-            "url": "shopify://collections/claquettes",
-            "heading_tag": "h3",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 40
-          }
         }
       },
       "block_order": [
         "collection_64KdyM",
+        "collection_zitY4t",
         "collection_j7FDqU",
-        "collection_7i4TmC",
-        "collection_zitY4t"
+        "collection_7i4TmC"
       ],
       "name": "Collection list",
       "settings": {
