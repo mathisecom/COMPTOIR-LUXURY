@@ -837,7 +837,7 @@
         "166442457738b23caf-1": {
           "type": "item",
           "settings": {
-            "title": "Quels mode de paiement acceptez-vous ?",
+            "title": "Quels modes de paiement acceptez-vous ?",
             "content": "<p>Nous acceptons divers modes de paiement, notamment les cartes de crédit/débit, PayPal, et éventuellement d'autres options en ligne. Tous les paiements sont sécurisés et cryptés pour votre sécurité.</p>"
           }
         },
