@@ -34,12 +34,20 @@
             "text": "Haute Qualité 1:1",
             "url": ""
           }
+        },
+        "message_Ykw49k": {
+          "type": "message",
+          "settings": {
+            "text": "+3,000 Clientes Satisfaites",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "message_7mDMJg",
         "message",
-        "message_r78FKB"
+        "message_r78FKB",
+        "message_Ykw49k"
       ],
       "settings": {
         "enable_sticky": false,
