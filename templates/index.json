@@ -274,6 +274,21 @@
             "overlay_opacity": 40
           }
         },
+        "collection_7i4TmC": {
+          "type": "collection",
+          "settings": {
+            "collection": "sac-a-main",
+            "image": "shopify://shop_images/Nouveau_projet_4.webp",
+            "subheading": "",
+            "title": "",
+            "url": "shopify://collections/sac-a-main",
+            "heading_tag": "h6",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 40
+          }
+        },
         "collection_zitY4t": {
           "type": "collection",
           "settings": {
@@ -303,28 +318,13 @@
             "overlay_color": "#000000",
             "overlay_opacity": 40
           }
-        },
-        "collection_7i4TmC": {
-          "type": "collection",
-          "settings": {
-            "collection": "sac-a-main",
-            "image": "shopify://shop_images/Nouveau_projet_4.webp",
-            "subheading": "",
-            "title": "",
-            "url": "shopify://collections/sac-a-main",
-            "heading_tag": "h6",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 40
-          }
         }
       },
       "block_order": [
         "collection_64KdyM",
+        "collection_7i4TmC",
         "collection_zitY4t",
-        "collection_j7FDqU",
-        "collection_7i4TmC"
+        "collection_j7FDqU"
       ],
       "name": "Collection list",
       "settings": {
