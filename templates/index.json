@@ -373,7 +373,7 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196453015.mp4",
-            "video_url": "",
+            "video_url": "shopify://products/puffer-toy-en-cuir-dagneau",
             "heading": "",
             "subheading": "",
             "button_text": "",
@@ -384,11 +384,11 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196412527.mp4",
-            "video_url": "",
+            "video_url": "shopify://products/america-s-cup",
             "heading": "",
             "subheading": "",
             "button_text": "",
-            "button_link": ""
+            "button_link": "shopify://products/america-s-cup"
           }
         },
         "video_f3feEB": {
