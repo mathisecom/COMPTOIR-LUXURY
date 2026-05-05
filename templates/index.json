@@ -48,6 +48,60 @@
         "overlay_opacity": 60
       }
     },
+    "marquee_xMjJgf": {
+      "type": "marquee",
+      "blocks": {
+        "text_Pp6VcU": {
+          "type": "text",
+          "settings": {
+            "text": "Livraison Offerte",
+            "icon": ""
+          }
+        },
+        "text_39bWj6": {
+          "type": "text",
+          "settings": {
+            "text": "Paiement sécurisé",
+            "icon": ""
+          }
+        },
+        "text_XwPV6G": {
+          "type": "text",
+          "settings": {
+            "text": "Service client 7j/7",
+            "icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_Pp6VcU",
+        "text_39bWj6",
+        "text_XwPV6G"
+      ],
+      "name": "Marquee défilant",
+      "settings": {
+        "bg_color": "#f8f7f4",
+        "text_color": "#1a1a1a",
+        "separator_color": "#1a1a1a",
+        "font_family": "inherit",
+        "font_size": 24,
+        "font_size_mobile": 12,
+        "font_weight": "600",
+        "text_transform": "uppercase",
+        "letter_spacing": 1,
+        "speed": 14,
+        "direction": "left",
+        "pause_on_hover": true,
+        "item_spacing": 45,
+        "padding_top": 14,
+        "padding_bottom": 14,
+        "separator": "★",
+        "border_top": false,
+        "border_bottom": false,
+        "border_color": "#ffffff",
+        "border_width": 1
+      }
+    },
     "logoscroll_a34HcQ": {
       "type": "logoscroll",
       "blocks": {
@@ -1032,6 +1086,7 @@
   },
   "order": [
     "video_wVBHC8",
+    "marquee_xMjJgf",
     "logoscroll_a34HcQ",
     "rich_text_8PMmFb",
     "featured_collection_DCz8XL",
