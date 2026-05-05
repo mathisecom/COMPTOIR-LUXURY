@@ -1,0 +1,352 @@
+{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .marquee-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+    width: 100%;
+    {% if section.settings.border_top %}
+      border-top: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    {% endif %}
+    {% if section.settings.border_bottom %}
+      border-bottom: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    {% endif %}
+  }
+
+  .marquee-{{ section.id }} .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll-{{ section.id }} {{ section.settings.speed }}s linear infinite;
+    {% if section.settings.direction == 'right' %}
+      animation-direction: reverse;
+    {% endif %}
+  }
+
+  .marquee-{{ section.id }}:hover .marquee-track {
+    {% if section.settings.pause_on_hover %}
+      animation-play-state: paused;
+    {% endif %}
+  }
+
+  .marquee-{{ section.id }} .marquee-item {
+    font-size: {{ section.settings.font_size }}px;
+    font-weight: {{ section.settings.font_weight }};
+    letter-spacing: {{ section.settings.letter_spacing }}px;
+    text-transform: {{ section.settings.text_transform }};
+    padding: 0 {{ section.settings.item_spacing | divided_by: 2 }}px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: {{ section.settings.item_spacing | divided_by: 2 }}px;
+    font-family: {{ section.settings.font_family }};
+  }
+
+  .marquee-{{ section.id }} .marquee-separator {
+    display: inline-block;
+    color: {{ section.settings.separator_color }};
+    font-size: {{ section.settings.font_size | times: 0.7 }}px;
+  }
+
+  @keyframes marquee-scroll-{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .marquee-{{ section.id }} .marquee-item {
+      font-size: {{ section.settings.font_size_mobile }}px;
+    }
+  }
+</style>
+
+<div class="marquee-{{ section.id }}">
+  <div class="marquee-track">
+    {% comment %} On duplique le contenu deux fois pour un défilement infini fluide {% endcomment %}
+    {% for i in (1..2) %}
+      {% for block in section.blocks %}
+        <div class="marquee-item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <span class="marquee-icon">{{ block.settings.icon }}</span>
+          {% endif %}
+          <span>{{ block.settings.text }}</span>
+          {% if section.settings.separator != blank %}
+            <span class="marquee-separator">{{ section.settings.separator }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee défilant",
+  "tag": "section",
+  "class": "section-marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "🎨 Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Couleur du séparateur",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "✏️ Typographie"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Police",
+      "options": [
+        { "value": "inherit", "label": "Police du thème" },
+        { "value": "Arial, sans-serif", "label": "Arial" },
+        { "value": "Helvetica, sans-serif", "label": "Helvetica" },
+        { "value": "Georgia, serif", "label": "Georgia" },
+        { "value": "'Courier New', monospace", "label": "Courier New" },
+        { "value": "'Times New Roman', serif", "label": "Times New Roman" }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Taille du texte (desktop)",
+      "min": 12,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Taille du texte (mobile)",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Graisse",
+      "options": [
+        { "value": "300", "label": "Léger" },
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-gras" },
+        { "value": "700", "label": "Gras" },
+        { "value": "800", "label": "Extra gras" },
+        { "value": "900", "label": "Black" }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Transformation",
+      "options": [
+        { "value": "none", "label": "Normal" },
+        { "value": "uppercase", "label": "MAJUSCULES" },
+        { "value": "lowercase", "label": "minuscules" },
+        { "value": "capitalize", "label": "Première Lettre" }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Espacement des lettres",
+      "min": -2,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "⚡ Animation"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Vitesse (en secondes)",
+      "info": "Plus le chiffre est élevé, plus c'est lent",
+      "min": 5,
+      "max": 100,
+      "step": 1,
+      "unit": "s",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "value": "left", "label": "Gauche ←" },
+        { "value": "right", "label": "Droite →" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause au survol de la souris",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "📏 Espacement"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Espace entre les éléments",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Marge intérieure haute",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Marge intérieure basse",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Séparateur entre les textes",
+      "info": "Ex: ★, ✦, •, /, —",
+      "default": "★"
+    },
+    {
+      "type": "header",
+      "content": "🔲 Bordures"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Bordure haute",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "Bordure basse",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Couleur de la bordure",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Épaisseur de la bordure",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Texte défilant",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison gratuite dès 50€"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône / Emoji (optionnel)",
+          "info": "Ex: 🚚, ⭐, 🔥, ✨"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee défilant",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "Livraison gratuite dès 50€",
+            "icon": "🚚"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "text": "Nouvelle collection disponible",
+            "icon": "✨"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "text": "Paiement sécurisé en 3x sans frais",
+            "icon": "💳"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "text": "Service client 7j/7",
+            "icon": "💬"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
