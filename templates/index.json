@@ -177,6 +177,9 @@
     },
     "featured_collection_DCz8XL": {
       "type": "featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}"
+      ],
       "name": "Featured collection",
       "settings": {
         "collection": "",
@@ -585,11 +588,21 @@
     },
     "featured_collection_jbiz3n": {
       "type": "featured-collection",
+      "custom_css": [
+        "@media screen and (max-width: 699px) {.product-list {--product-list-carousel-item-width: 46vw !important; }}"
+      ],
       "name": "Featured collection",
       "settings": {
         "collection": "",
         "products": [
-          "puffer-toy-en-cuir-dagneau"
+          "puffer-toy-en-cuir-dagneau",
+          "baskets-cc",
+          "icarino-ysl-1",
+          "icarino-ysl",
+          "sac-arcadie-3",
+          "sac-arcadie-2",
+          "sac-arcadie",
+          "sac-arcadie-1"
         ],
         "full_width": true,
         "stack_products": false,
