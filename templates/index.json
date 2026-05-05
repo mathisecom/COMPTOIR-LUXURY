@@ -373,11 +373,11 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@lecomptoirluxury_1777196453015.mp4",
-            "video_url": "shopify://products/puffer-toy-en-cuir-dagneau",
+            "video_url": "",
             "heading": "",
             "subheading": "",
             "button_text": "",
-            "button_link": ""
+            "button_link": "shopify://products/puffer-toy-en-cuir-dagneau"
           }
         },
         "video_bj8bcx": {
@@ -421,7 +421,7 @@
             "heading": "",
             "subheading": "",
             "button_text": "",
-            "button_link": ""
+            "button_link": "shopify://products/puffer-toy-en-cuir-dagneau"
           }
         },
         "video_FMfMDh": {
@@ -432,7 +432,7 @@
             "heading": "",
             "subheading": "",
             "button_text": "",
-            "button_link": ""
+            "button_link": "shopify://products/puffer-toy-en-cuir-dagneau"
           }
         }
       },
