@@ -617,6 +617,14 @@
     "logo_list_GmrLz9": {
       "type": "logo-list",
       "blocks": {
+        "logo_KAdDHD": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/CREA_1080X1080_-_2026-05-05T103731.726.png",
+            "logo_width": 80,
+            "link": "https://www.instagram.com/comptoirluxury"
+          }
+        },
         "logo_DVz6jx": {
           "type": "logo",
           "settings": {
@@ -635,17 +643,19 @@
         }
       },
       "block_order": [
+        "logo_KAdDHD",
         "logo_DVz6jx",
         "logo_ceV3tj"
       ],
+      "custom_css": [],
       "name": "Logo list",
       "settings": {
         "full_width": true,
-        "stack_mobile": true,
+        "stack_mobile": false,
         "title": "",
         "content": "<h6>SUIVEZ-NOUS</h6>",
         "text_alignment": "center",
-        "items_per_row": 5,
+        "items_per_row": 3,
         "background": "",
         "background_gradient": "",
         "text_color": "",
