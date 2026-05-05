@@ -904,6 +904,14 @@
     "logo_list_WBYgbm": {
       "type": "logo-list",
       "blocks": {
+        "logo_DUcWLh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/CREA_1080X1080_-_2026-05-05T103731.726.png",
+            "logo_width": 80,
+            "link": ""
+          }
+        },
         "logo_BMWVEk": {
           "type": "logo",
           "settings": {
@@ -922,13 +930,14 @@
         }
       },
       "block_order": [
+        "logo_DUcWLh",
         "logo_BMWVEk",
         "logo_Fgz9Fg"
       ],
       "name": "Logo list",
       "settings": {
         "full_width": true,
-        "stack_mobile": true,
+        "stack_mobile": false,
         "title": "",
         "content": "<h6>SUIVEZ-NOUS</h6>",
         "text_alignment": "center",
