@@ -98,7 +98,7 @@
         "separator": "★",
         "border_top": false,
         "border_bottom": false,
-        "border_color": "#ffffff",
+        "border_color": "#000000",
         "border_width": 1
       }
     },
