@@ -84,7 +84,7 @@
         "text_color": "#1a1a1a",
         "separator_color": "#1a1a1a",
         "font_family": "inherit",
-        "font_size": 24,
+        "font_size": 13,
         "font_size_mobile": 12,
         "font_weight": "600",
         "text_transform": "uppercase",
