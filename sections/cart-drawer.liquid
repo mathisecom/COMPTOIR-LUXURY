@@ -170,7 +170,10 @@
         {%- endif -%}
 
         {%- if section.settings.show_checkout_button -%}
-          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'xl' -%}
+          <a href="{{ routes.cart_url }}?external_checkout=1" class="button button--xl" data-no-instant>
+            {%- render 'icon' with 'picto-lock' -%}
+            {{- checkout_label -}}
+          </a>
         {%- endif -%}
       </form>
     </div>

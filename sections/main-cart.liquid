@@ -171,7 +171,10 @@
 
                   {%- when 'checkout_button' -%}
                     {%- assign checkout_button = 'cart.general.checkout' | t -%}
-                    {%- render 'button', type: 'submit', icon: 'picto-lock', content: checkout_button, size: 'xl', name: 'checkout', stretch: true, block: block -%}
+                    <a href="{{ routes.cart_url }}?external_checkout=1" class="button button--xl w-full" data-no-instant {{ block.shopify_attributes }}>
+                      {%- render 'icon' with 'picto-lock' -%}
+                      {{- checkout_button -}}
+                    </a>
                 {%- endcase -%}
               {%- endfor -%}
             </form>
