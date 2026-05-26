@@ -72,6 +72,7 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
 
     {{ content_for_header }}
 
+    {% render 'external-checkout-config' %}
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
   </head>
 

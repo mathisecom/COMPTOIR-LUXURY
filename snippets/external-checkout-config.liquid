@@ -1,0 +1,13 @@
+{%- comment -%}
+  Public backend URL only. Do not place Stripe, Shopify Admin, database, or webhook secrets here.
+{%- endcomment -%}
+<script>
+  window.COMPTOIR_EXTERNAL_CHECKOUT_URL = 'https://checkout.lecomptoirdaalyiah.com';
+  window.__comptoirCustomer = {
+    email: {{ customer.email | json }},
+    first_name: {{ customer.first_name | json }},
+    last_name: {{ customer.last_name | json }},
+    phone: {{ customer.phone | json }}
+  };
+</script>
+<script src="{{ 'external-checkout.js' | asset_url }}" defer></script>

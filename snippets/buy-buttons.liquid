@@ -24,6 +24,7 @@ Supported variables
 
 {%- assign recipient_feature_active = false -%}
 
+{%- assign show_payment_button = false -%}
 {%- if product.gift_card? and show_gift_card_recipient -%}
   {%- assign recipient_feature_active = true -%}
   {%- assign show_payment_button = false -%}

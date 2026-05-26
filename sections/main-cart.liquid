@@ -167,11 +167,7 @@
                     {%- endif -%}
 
                   {%- when 'accelerated_buttons' -%}
-                    {% if additional_checkout_buttons %}
-                      <div class="additional-checkout-buttons additional-checkout-buttons--vertical" {{ block.shopify_attributes }}>
-                        {{- content_for_additional_checkout_buttons -}}
-                      </div>
-                    {% endif %}
+                    {%- comment -%}Disabled: all payments go through the external embedded Stripe checkout.{%- endcomment -%}
 
                   {%- when 'checkout_button' -%}
                     {%- assign checkout_button = 'cart.general.checkout' | t -%}
