@@ -4,7 +4,6 @@
   var backendBaseUrl = window.COMPTOIR_EXTERNAL_CHECKOUT_URL;
   var isRedirecting = false;
   var discountStorageKey = "comptoir_luxury_discount_code";
-  var directCartStorageKey = "comptoir_luxury_direct_checkout_cart";
 
   if (!backendBaseUrl) {
     return;
@@ -110,7 +109,7 @@
 
     try {
       await addCurrentProductFormToCart(event.target);
-      var cart = await readCheckoutCart();
+      var cart = await readCart();
       if (!cart || !Array.isArray(cart.items) || cart.items.length === 0) {
         showCheckoutError("Votre panier est vide. Ajoutez un article avant de lancer le paiement.");
         return;
@@ -126,30 +125,6 @@
     var response = await fetch("/cart.js", { credentials: "same-origin", headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error("Unable to read Shopify cart.");
     return response.json();
-  }
-
-  function readCheckoutCart() {
-    var directCart = readDirectCheckoutCart();
-    if (directCart) return Promise.resolve(directCart);
-    return readCart();
-  }
-
-  function readDirectCheckoutCart() {
-    try {
-      var params = new URLSearchParams(window.location.search);
-      if (params.get("direct_checkout") !== "1") return null;
-      var cart = JSON.parse(sessionStorage.getItem(directCartStorageKey) || "null");
-      if (!cart || !Array.isArray(cart.items) || !cart.items.length) return null;
-      return cart;
-    } catch (_error) {
-      return null;
-    }
-  }
-
-  function storeDirectCheckoutCart(cart) {
-    try {
-      sessionStorage.setItem(directCartStorageKey, JSON.stringify(cart));
-    } catch (_error) {}
   }
 
   async function addCurrentProductFormToCart(target) {
@@ -192,7 +167,7 @@
     bindCheckoutForm();
 
     try {
-      var cart = await readCheckoutCart();
+      var cart = await readCart();
       if (!cart || !cart.items || !cart.items.length) {
         document.getElementById("comptoir-checkout-items").innerHTML = '<p class="comptoir-checkout__error">Votre panier est vide.</p>';
         return;
@@ -263,7 +238,7 @@
             phone: String(formData.get("phone") || "").trim(),
           },
         };
-        var cart = await readCheckoutCart();
+        var cart = await readCart();
         var checkout = await createExternalCheckout(cart, customer);
         if (!checkout || !checkout.session_id) throw new Error("Missing checkout session.");
         window.location.href = "/cart?external_checkout_session=" + encodeURIComponent(checkout.session_id) + "&checkout_token=" + encodeURIComponent(checkout.checkout_token || "");
@@ -444,94 +419,6 @@
 
   async function clearShopifyCart() {
     try { await fetch("/cart/clear.js", { method: "POST", credentials: "same-origin", headers: { Accept: "application/json" } }); } catch (_error) {}
-    try { sessionStorage.removeItem(directCartStorageKey); } catch (_error) {}
-  }
-
-  function handleDirectProductSubmit(event) {
-    var form = event.target;
-    if (!form || !(form instanceof HTMLFormElement) || isRedirecting) return false;
-    var action = form.getAttribute("action") || "";
-    if (action.indexOf("/cart/add") === -1) return false;
-
-    var cart = buildDirectCartFromProductForm(form);
-    if (!cart) return false;
-
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    isRedirecting = true;
-    showOverlay();
-    storeDirectCheckoutCart(cart);
-    window.location.href = "/cart?external_checkout=1&direct_checkout=1";
-    return true;
-  }
-
-  function buildDirectCartFromProductForm(form) {
-    try {
-      var formData = new FormData(form);
-      var variantId = Number(formData.get("id") || 0);
-      var quantity = Number(formData.get("quantity") || 1);
-      if (!Number.isFinite(variantId) || variantId <= 0 || !Number.isFinite(quantity) || quantity <= 0) return null;
-      quantity = Math.min(Math.max(Math.round(quantity), 1), 99);
-
-      var variant = readVariantFromPage(variantId) || {};
-      var productTitle = readProductTitle();
-      var variantTitle = variant.public_title || variant.title || "";
-      var title = variant.name || [productTitle, variantTitle].filter(Boolean).join(" - ") || "Article";
-      var unitPrice = Number(variant.price || 0);
-      var linePrice = unitPrice * quantity;
-
-      return {
-        currency: window.Shopify && window.Shopify.currency ? window.Shopify.currency.active : "EUR",
-        total_price: linePrice,
-        items: [
-          {
-            id: variantId,
-            variant_id: variantId,
-            product_id: Number(formData.get("product-id") || variant.product_id || 0) || undefined,
-            quantity: quantity,
-            title: title,
-            product_title: productTitle || title,
-            variant_title: variantTitle,
-            options_with_values: variantTitle ? [{ name: "Taille", value: variantTitle }] : [],
-            price: unitPrice,
-            line_price: linePrice,
-            final_line_price: linePrice,
-            image: readProductImage(),
-            properties: {},
-          },
-        ],
-      };
-    } catch (_error) {
-      return null;
-    }
-  }
-
-  function readVariantFromPage(variantId) {
-    var scripts = document.querySelectorAll('script[type="application/json"]');
-    for (var i = 0; i < scripts.length; i += 1) {
-      var text = scripts[i].textContent || "";
-      if (text.indexOf(String(variantId)) === -1) continue;
-      try {
-        var data = JSON.parse(text);
-        if (data && String(data.id) === String(variantId)) return data;
-        if (Array.isArray(data)) {
-          var variant = data.find(function (item) { return String(item && item.id) === String(variantId); });
-          if (variant) return variant;
-        }
-      } catch (_error) {}
-    }
-    return null;
-  }
-
-  function readProductTitle() {
-    var heading = document.querySelector("h1");
-    return heading ? String(heading.textContent || "").trim() : "";
-  }
-
-  function readProductImage() {
-    var image = document.querySelector(".product-gallery img, product-gallery img, main img");
-    return image ? String(image.currentSrc || image.src || "") : "";
   }
 
   function wait(ms) { return new Promise(function (resolve) { window.setTimeout(resolve, ms); }); }
@@ -543,7 +430,6 @@
   document.addEventListener("submit", function (event) {
     var form = event.target;
     if (!form || !(form instanceof HTMLFormElement)) return;
-    if (handleDirectProductSubmit(event)) return;
     var action = form.getAttribute("action") || "";
     var hasCheckoutSubmitter = event.submitter && event.submitter.matches && event.submitter.matches('[name="checkout"]');
     var hasCheckoutButton = form.querySelector('[name="checkout"]');
