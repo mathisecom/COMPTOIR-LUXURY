@@ -146,7 +146,7 @@ LIQUID
 
                     {%- if section.settings.view_product != blank -%}
                       <div class="feature-chart__view-button-container hidden justify-self-start md:block">
-                        {%- render 'button', href: chart_product.url, content: section.settings.view_product, background: product_column.settings.view_button_background, text_color: product_column].settings.view_button_text_color, subdued: true -%}
+                        {%- render 'button', href: chart_product.url, content: section.settings.view_product, background: product_column.settings.view_button_background, text_color: product_column.settings.view_button_text_color, subdued: true -%}
                       </div>
                     {%- endif -%}
                   </div>
@@ -691,3 +691,17 @@ LIQUID
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'button', href: chart_product.url, content: section.settings.view_product,
+    background: product_column.settings.view_button_background, text_color: product_column].settings.view_button_text_color,
+    subdued: true -%}"
+  to: "{%- render 'button', href: chart_product.url, content: section.settings.view_product,
+    background: product_column.settings.view_button_background, text_color: product_column.settings.view_button_text_color,
+    subdued: true -%}"
+  position: 7625..7848
+{% endcomment %}
